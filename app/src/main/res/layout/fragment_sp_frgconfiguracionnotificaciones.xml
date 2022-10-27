@@ -30,29 +30,36 @@
                 android:orientation="vertical">
 
                 <Switch
-                    android:id="@+id/switch2"
+                    android:id="@+id/stch_confmensajes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_1" />
 
                 <Switch
-                    android:id="@+id/switch5"
+                    android:id="@+id/stch_confpedidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_2" />
 
                 <Switch
-                    android:id="@+id/switch3"
+                    android:id="@+id/stch_confactividad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_3" />
 
                 <Switch
-                    android:id="@+id/switch4"
+                    android:id="@+id/stch_confactualizaciones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_4" />
+
+                <Button
+                    android:id="@+id/btn_guardarconfiguracionnotificaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Guardar" />
             </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
