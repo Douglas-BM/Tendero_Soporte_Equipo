@@ -49,4 +49,16 @@
             android:id="@+id/action_nav_configuracionnotificaiones_to_nav_soporte"
             app:destination="@id/nav_soporte" />
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_centroayuda"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frg02_1"
+        android:label="@string/menu_soporte_centro_de_ayuda"
+        tools:layout="@layout/fragment_sp_frg02_1" />
+
+    <fragment
+        android:id="@+id/nav_terminosYcondiciones"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frg04"
+        android:label="@string/menu_soporte_terminos_condiciones_terminos"
+        tools:layout="@layout/fragment_sp_frg04" />
 </navigation>
