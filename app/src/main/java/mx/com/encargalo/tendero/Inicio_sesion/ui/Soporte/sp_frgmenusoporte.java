@@ -57,7 +57,7 @@ public class sp_frgmenusoporte extends Fragment {
                 Intent intent=new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
                 intent.putExtra(Intent.EXTRA_TEXT,"Descarga la aplicacion URL");
-                startActivity(Intent.createChooser(intent,"Compartir con"));
+                startActivity(Intent.createChooser(intent,"Compartir App con"));
 
             }
         });
