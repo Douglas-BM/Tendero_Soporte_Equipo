@@ -78,7 +78,11 @@
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.so_detallevideodemostrativo"
         android:label="@string/menu_soporte_centro_de_ayuda_btn_2"
         tools:layout="@layout/fragment_so_detallevideodemostrativo" />
-
+    <fragment
+        android:id="@+id/nav_detallepregfre"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.so_DetallePreguntaFrecuentes"
+        android:label="@string/menu_soporte_centro_de_ayuda_btn_1"
+        tools:layout="@layout/fragment_so__detalle_pregunta_frecuentes" />
     <fragment
         android:id="@+id/nav_acercade"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgacercade"
