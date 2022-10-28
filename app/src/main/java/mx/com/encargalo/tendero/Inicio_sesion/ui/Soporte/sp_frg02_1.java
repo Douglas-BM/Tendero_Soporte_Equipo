@@ -3,10 +3,12 @@ package mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import mx.com.encargalo.R;
 
@@ -16,6 +18,8 @@ import mx.com.encargalo.R;
  * create an instance of this fragment.
  */
 public class sp_frg02_1 extends Fragment {
+
+    Button btnvideodemo;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +65,16 @@ public class sp_frg02_1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sp_frg02_1, container, false);
+        View view= inflater.inflate(R.layout.fragment_sp_frg02_1, container, false);
+        btnvideodemo=view.findViewById(R.id.btn_so_02_VideosDem);
+
+        btnvideodemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_detallevideodemo);
+            }
+        });
+
+        return view;
     }
 }

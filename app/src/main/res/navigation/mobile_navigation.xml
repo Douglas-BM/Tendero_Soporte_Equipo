@@ -39,26 +39,39 @@
         android:id="@+id/nav_soporte"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgmenusoporte"
         android:label="@string/menu_soporte"
-        tools:layout="@layout/fragment_sp_frgmenusoporte" />
+        tools:layout="@layout/fragment_sp_frgmenusoporte" >
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_configuracionnotificaiones"
+            app:destination="@id/nav_configuracionnotificaiones" />
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_centroayuda"
+            app:destination="@id/nav_centroayuda" />
+    </fragment>
     <fragment
         android:id="@+id/nav_configuracionnotificaiones"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgconfiguracionnotificaciones"
         android:label="@string/menu_soporte"
-        tools:layout="@layout/fragment_sp_frgconfiguracionnotificaciones" >
-        <action
-            android:id="@+id/action_nav_configuracionnotificaiones_to_nav_soporte"
-            app:destination="@id/nav_soporte" />
-    </fragment>
+        tools:layout="@layout/fragment_sp_frgconfiguracionnotificaciones" />
 
     <fragment
         android:id="@+id/nav_centroayuda"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frg02_1"
         android:label="@string/menu_soporte_centro_de_ayuda"
-        tools:layout="@layout/fragment_sp_frg02_1" />
+        tools:layout="@layout/fragment_sp_frg02_1" >
+        <action
+            android:id="@+id/action_nav_centroayuda_to_nav_detallevideodemo"
+            app:destination="@id/nav_detallevideodemo" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_terminosYcondiciones"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frg04"
         android:label="@string/menu_soporte_terminos_condiciones_terminos"
         tools:layout="@layout/fragment_sp_frg04" />
+
+    <fragment
+        android:id="@+id/nav_detallevideodemo"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.so_detallevideodemostrativo"
+        android:label="@string/menu_soporte_centro_de_ayuda_btn_2"
+        tools:layout="@layout/fragment_so_detallevideodemostrativo" />
 </navigation>
