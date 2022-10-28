@@ -78,11 +78,20 @@
     <string name="menu_soporte_terminos_condiciones_terminos">Terminos y condiciones de Uso</string>
     <string name="menu_soporte_terminos_condiciones_politicas">Política de privacidad y datos personales</string>
     <string name="menu_soporte_terminos_condiciones_lista_negra">Lista de productos prohibidos a la venta</string>
-
+    <!--  SO_05  -->
+    <string name="menu_soporte_acerca_de">Acerca de</string>
+    <string name="menu_soporte_acerca_de_btn_1">Website</string>
+    <string name="menu_soporte_acerca_de_btn_2">Facebook</string>
+    <string name="menu_soporte_acerca_de_btn_3">Instagram</string>
+    <string name="menu_soporte_acerca_de_btn_4">Cerrar</string>
     <!--  SO_06  -->
     <string name="menu_soporte_compartir_website">Website</string>
     <string name="menu_soporte_compartir_facebook">Facebook</string>
     <string name="menu_soporte_compartir_instagram">Instagram</string>
+
+
+
+
     <!--        Modulo Tienda(mit)                 -->
 
 

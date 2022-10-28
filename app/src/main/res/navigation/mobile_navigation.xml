@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_nav_soporte_to_nav_centroayuda"
             app:destination="@id/nav_centroayuda" />
+        <action
+            android:id="@+id/action_nav_acercade_to_nav_centroayuda"
+            app:destination="@id/nav_acercade" />
     </fragment>
     <fragment
         android:id="@+id/nav_configuracionnotificaiones"
@@ -74,4 +77,11 @@
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.so_detallevideodemostrativo"
         android:label="@string/menu_soporte_centro_de_ayuda_btn_2"
         tools:layout="@layout/fragment_so_detallevideodemostrativo" />
+
+    <fragment
+        android:id="@+id/nav_acercade"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgacercade"
+        android:label="@string/menu_soporte_acerca_de"
+        tools:layout="@layout/fragment_sp_frgacercade" >
+    </fragment>
 </navigation>
