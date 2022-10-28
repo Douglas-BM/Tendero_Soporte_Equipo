@@ -19,7 +19,7 @@ import mx.com.encargalo.R;
  */
 public class sp_frg02_1 extends Fragment {
 
-    Button btnvideodemo;
+    Button btnvideodemo,btnprefre;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,11 +67,19 @@ public class sp_frg02_1 extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_sp_frg02_1, container, false);
         btnvideodemo=view.findViewById(R.id.btn_so_02_VideosDem);
+        btnprefre=view.findViewById(R.id.btn_so_02_PregFrecuentes);
 
         btnvideodemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.nav_detallevideodemo);
+            }
+        });
+
+        btnprefre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_detallepregfre);
             }
         });
 

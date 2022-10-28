@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ciclo 10/TP2 encargalo/TENDERO-master/app/src/main/res/layout/fragment_sp_frgconfiguracionnotificaciones.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_so__detalle_pregunta_frecuentes.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_so_detallevideodemostrativo.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg01.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg02_1.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg02_2.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg02_3.xml" value="0.36666666666666664" />
@@ -13,6 +15,7 @@
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg06.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_tn_frgmenumitienda.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/so_itemdetallevideosdemo.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/so_itempreguntasfrecuentes.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
