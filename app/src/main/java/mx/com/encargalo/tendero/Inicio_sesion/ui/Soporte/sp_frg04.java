@@ -1,7 +1,7 @@
 package mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte;
 
+import android.app.Dialog;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -16,9 +16,10 @@ import mx.com.encargalo.R;
  * Use the {@link sp_frg04#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class sp_frg04 extends Fragment {
+public class sp_frg04 extends Fragment implements View.OnClickListener {
 
-
+    Button btnTermsConsUso, btnPolitPrivacidad, btnProducProhibidos;
+    Dialog mDialog;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,7 +67,32 @@ public class sp_frg04 extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_sp_frg04, container, false);
 
+        btnTermsConsUso = view.findViewById(R.id.btn_so_04_terminos_condiciones);
+        btnPolitPrivacidad = view.findViewById(R.id.btn_so_04_politica_privacidad);
+        btnProducProhibidos = view.findViewById(R.id.btn_so_04_produc_prohibidos);
+        mDialog = new Dialog(getContext());
+
+        btnTermsConsUso.setOnClickListener(this);
+        btnPolitPrivacidad.setOnClickListener(this);
+        btnProducProhibidos.setOnClickListener(this);
 
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_so_04_terminos_condiciones:{
+                so_Terminoscondicionesdetalles dialogoDetalle = new so_Terminoscondicionesdetalles();
+                dialogoDetalle.show(getActivity().getSupportFragmentManager(), "Detalles");
+                break;
+            }
+            case R.id.btn_so_04_politica_privacidad:{
+                break;
+            }
+            case R.id.btn_so_04_produc_prohibidos:{
+                break;
+            }
+        }
     }
 }

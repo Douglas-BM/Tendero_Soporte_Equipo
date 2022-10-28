@@ -1,21 +1,28 @@
 package mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
+
+import org.jetbrains.annotations.NotNull;
 
 import mx.com.encargalo.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link so_Terminoscondicionesdetalles#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class so_Terminoscondicionesdetalles extends Fragment {
+
+public class so_Terminoscondicionesdetalles extends DialogFragment{
+
+    Button btnCerrarTermsConsDetalle;
+    Activity actividad;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,20 +54,50 @@ public class so_Terminoscondicionesdetalles extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+//    @Nullable
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_so__terminoscondicionesdetalles, container, false);
+//    }
 
+    @NonNull
+    @NotNull
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public Dialog onCreateDialog(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        return crearDialogoTermsConsDetalle();
+        //super.onCreateDialog(savedInstanceState);
+    }
+
+    private AlertDialog crearDialogoTermsConsDetalle() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+
+        View v = inflater.inflate(R.layout.fragment_so__terminoscondicionesdetalles, null);
+        builder.setView(v);
+
+        btnCerrarTermsConsDetalle = v.findViewById(R.id.btnCerrarTermsConsDetalle);
+
+        btnCerrarTermsConsDetalle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
+
+        return builder.create();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_so__terminoscondicionesdetalles, container, false);
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if (context instanceof Activity){
+            this.actividad = (Activity) context;
+        }else{
+            throw new RuntimeException(context.toString() + "Debe implementar OnFragmentInteractionListener");
+        }
     }
 }
