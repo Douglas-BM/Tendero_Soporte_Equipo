@@ -1,6 +1,5 @@
 package mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
@@ -19,7 +18,6 @@ import mx.com.encargalo.R;
 public class sp_frg04 extends Fragment implements View.OnClickListener {
 
     Button btnTermsConsUso, btnPolitPrivacidad, btnProducProhibidos;
-    Dialog mDialog;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,7 +68,6 @@ public class sp_frg04 extends Fragment implements View.OnClickListener {
         btnTermsConsUso = view.findViewById(R.id.btn_so_04_terminos_condiciones);
         btnPolitPrivacidad = view.findViewById(R.id.btn_so_04_politica_privacidad);
         btnProducProhibidos = view.findViewById(R.id.btn_so_04_produc_prohibidos);
-        mDialog = new Dialog(getContext());
 
         btnTermsConsUso.setOnClickListener(this);
         btnPolitPrivacidad.setOnClickListener(this);
@@ -81,16 +78,27 @@ public class sp_frg04 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Bundle bundle = new Bundle();
         switch (v.getId()){
             case R.id.btn_so_04_terminos_condiciones:{
+                bundle.putString("tipo", "terminos_condiciones");
                 so_Terminoscondicionesdetalles dialogoDetalle = new so_Terminoscondicionesdetalles();
-                dialogoDetalle.show(getActivity().getSupportFragmentManager(), "Detalles");
+                dialogoDetalle.setArguments(bundle);
+                dialogoDetalle.show(getActivity().getSupportFragmentManager(), "terminos_condiciones");
                 break;
             }
             case R.id.btn_so_04_politica_privacidad:{
+                bundle.putString("tipo", "politica_privacidad");
+                so_Terminoscondicionesdetalles dialogoDetalle = new so_Terminoscondicionesdetalles();
+                dialogoDetalle.show(getActivity().getSupportFragmentManager(), "politica_privacidad");
+                dialogoDetalle.setArguments(bundle);
                 break;
             }
             case R.id.btn_so_04_produc_prohibidos:{
+                bundle.putString("tipo", "productos_prohibidos");
+                so_Terminoscondicionesdetalles dialogoDetalle = new so_Terminoscondicionesdetalles();
+                dialogoDetalle.show(getActivity().getSupportFragmentManager(), "productos_prohibidos");
+                dialogoDetalle.setArguments(bundle);
                 break;
             }
         }

@@ -16,14 +16,14 @@
         android:text="@string/menu_soporte_acerca_de"
         android:layout_gravity="center"/>
     <Button
-        android:id="@+id/btn_so_04_terminos_condiciones"
+        android:id="@+id/btn_so_05_website"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="@string/menu_soporte_acerca_de_btn_1"/>
 
     <Button
-        android:id="@+id/btn_so_04_politica_privacidad"
+        android:id="@+id/btn_so_05_facebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
@@ -31,21 +31,12 @@
         />
 
     <Button
-        android:id="@+id/btn_so_04_produc_prohibidos"
+        android:id="@+id/btn_so_05_instagram"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="@string/menu_soporte_acerca_de_btn_3"
         />
-    <Button
-        android:id="@+id/btnCerrarAcercaDe"
-        android:layout_width="170dp"
-        android:layout_height="55dp"
-        android:text="@string/menu_soporte_acerca_de_btn_4"
-        android:textAllCaps="false"
-        android:layout_gravity="center"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/redPrimary"
-        android:textColor="@color/colorPrimary"></Button>
+
 
 </LinearLayout>

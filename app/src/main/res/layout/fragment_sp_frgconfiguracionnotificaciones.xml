@@ -22,42 +22,55 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/menu_soporte_notificaciones"
-                android:textSize="30dp" />
+                android:textSize="36dp"
+                android:textStyle="bold"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_margin="20dp">
 
                 <Switch
                     android:id="@+id/stch_confmensajes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/menu_soporte_notificaciones_switch_1" />
+                    android:text="@string/menu_soporte_notificaciones_switch_1"
+                    android:paddingBottom="10dp"
+                    android:textSize="20sp"/>
 
                 <Switch
                     android:id="@+id/stch_confpedidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/menu_soporte_notificaciones_switch_2" />
+                    android:text="@string/menu_soporte_notificaciones_switch_2"
+                    android:paddingBottom="10dp"
+                    android:textSize="20sp"/>
 
                 <Switch
                     android:id="@+id/stch_confactividad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/menu_soporte_notificaciones_switch_3" />
+                    android:text="@string/menu_soporte_notificaciones_switch_3"
+                    android:paddingBottom="10dp"
+                    android:textSize="20sp"/>
 
                 <Switch
                     android:id="@+id/stch_confactualizaciones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/menu_soporte_notificaciones_switch_4" />
+                    android:text="@string/menu_soporte_notificaciones_switch_4"
+                    android:paddingBottom="10dp"
+                    android:textSize="20sp"/>
 
                 <Button
                     android:id="@+id/btn_guardarconfiguracionnotificaciones"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Guardar" />
+                    android:text="Guardar"
+                    android:layout_gravity="center"
+                    android:paddingBottom="10dp"
+                    android:textSize="20sp"/>
             </LinearLayout>
 
         </LinearLayout>

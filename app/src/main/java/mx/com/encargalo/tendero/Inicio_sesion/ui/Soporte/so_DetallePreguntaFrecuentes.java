@@ -106,7 +106,7 @@ public class so_DetallePreguntaFrecuentes extends Fragment {
         progress= new ProgressDialog(getContext());
         progress.setMessage("Consulta datos");
         progress.show();
-        String url= "http://192.168.0.6/ApisPT2/c_ConsultarPregFrecuente.php";
+        String url= "http://192.168.0.17/ApisPT2/c_ConsultarPregFrecuente.php";
         url=url.replace(" ","%20");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override

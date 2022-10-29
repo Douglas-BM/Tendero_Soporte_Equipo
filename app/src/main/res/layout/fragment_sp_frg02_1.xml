@@ -36,7 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/menu_soporte_centro_de_ayuda_btn_1"
-            tools:text="@string/menu_soporte_centro_de_ayuda_btn_1" />
+            tools:text="@string/menu_soporte_centro_de_ayuda_btn_1"
+            />
 
         <Button
             android:id="@+id/btn_so_02_VideosDem"

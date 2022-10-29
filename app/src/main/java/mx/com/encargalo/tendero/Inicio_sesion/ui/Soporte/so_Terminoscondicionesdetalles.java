@@ -1,8 +1,8 @@
 package mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -13,16 +13,38 @@ import androidx.fragment.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import mx.com.encargalo.R;
+import mx.com.encargalo.tendero.Inicio_sesion.Adapter.so_Adaptervideodemo;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_Entidadtermsconsuso;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_Entidadvideodemo;
 
 
 public class so_Terminoscondicionesdetalles extends DialogFragment{
 
     Button btnCerrarTermsConsDetalle;
     Activity actividad;
+
+    ProgressDialog progress;
+    RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
+
+    TextView txtDetalleTitulo, txtDetalleContenido;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -79,6 +101,8 @@ public class so_Terminoscondicionesdetalles extends DialogFragment{
         builder.setView(v);
 
         btnCerrarTermsConsDetalle = v.findViewById(R.id.btnCerrarTermsConsDetalle);
+        txtDetalleTitulo = v.findViewById(R.id.txt_so_04_detalle_titulo);
+        txtDetalleContenido = v.findViewById(R.id.txt_so_04_detalle_contenido);
 
         btnCerrarTermsConsDetalle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +111,71 @@ public class so_Terminoscondicionesdetalles extends DialogFragment{
             }
         });
 
+        request= Volley.newRequestQueue(getContext());
+        mostrarTermsConsDetalle();
+
         return builder.create();
+    }
+
+    private void mostrarTermsConsDetalle() {
+        Bundle tipo = getArguments();
+        String jsonArrayName = "";
+
+        String tipoDetalle = tipo.getString("tipo");
+        String url = null;
+        progress= new ProgressDialog(getContext());
+        progress.setMessage("Detalles");
+        progress.show();
+        switch (tipoDetalle){
+            case "terminos_condiciones":{
+                url= "http://192.168.0.17/ApisPT2/c_ConsultarTermsCondicionesUso.php";
+                jsonArrayName = "termscondicionesuso";
+                break;
+            }
+            case "politica_privacidad":{
+                url= "http://192.168.0.17/ApisPT2/c_ConsultarPoliticasPrivacidad.php";
+                jsonArrayName = "politicasprivacidad";
+                break;
+            }
+            case "productos_prohibidos":{
+                url= "http://192.168.0.17/ApisPT2/c_ConsultarProducProhibido.php";
+                jsonArrayName = "producprohibido";
+                break;
+            }
+        }
+
+        url = url.replace(" ","%20");
+
+        final String finalJsonArrayName = jsonArrayName;
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                so_Entidadtermsconsuso detalles = null;
+                JSONArray json=response.optJSONArray(finalJsonArrayName);
+
+                try {
+                    detalles = new so_Entidadtermsconsuso();
+                    JSONObject jsonObject = null;
+                    jsonObject=json.getJSONObject(0);
+
+                    detalles.setTermsConsUsoTitulo(jsonObject.optString("tecoTitulo"));
+                    detalles.setTermsConsUsoContenido(jsonObject.optString("tecoContenido"));
+                    progress.hide();
+                    txtDetalleTitulo.setText(detalles.getTermsConsUsoTitulo());
+                    txtDetalleContenido.setText(detalles.getTermsConsUsoContenido());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    progress.hide();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error.toString());
+                Toast.makeText(getContext(), "Error al consultar"+ error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
     }
 
     @Override

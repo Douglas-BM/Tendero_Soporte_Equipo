@@ -4,25 +4,28 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+
     android:background="@drawable/termscons_details_background"
     tools:context=".tendero.Inicio_sesion.ui.Soporte.so_Terminoscondicionesdetalles">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-    android:id="@+id/txt_so_04_terms_cons_uso_titulo"
+    android:id="@+id/txt_so_04_detalle_titulo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textSize="24sp"
+    android:textSize="20sp"
     android:layout_margin="10dp"
         android:text="@string/menu_soporte_terminos_condiciones_terminos"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
     <TextView
-        android:id="@+id/txt_so_04_terms_cons_uso_contenido"
-        android:layout_width="390dp"
+        android:id="@+id/txt_so_04_detalle_contenido"
+        android:layout_width="300dp"
         android:layout_height="500dp"
         android:layout_gravity="center"
         android:text=""
-        android:textSize="20sp"></TextView>
+        android:textSize="16sp"
+        android:justificationMode="inter_word"></TextView>
     <Button
         android:id="@+id/btnCerrarTermsConsDetalle"
         android:layout_width="170dp"
