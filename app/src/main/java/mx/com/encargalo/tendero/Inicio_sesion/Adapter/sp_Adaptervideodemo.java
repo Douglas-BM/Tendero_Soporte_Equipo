@@ -11,22 +11,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import mx.com.encargalo.R;
-import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_Entidadvideodemo;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_Entidadvideodemo;
 
-public class so_Adaptervideodemo extends RecyclerView.Adapter<so_Adaptervideodemo.VideosDemotrativoHolder> {
-    List<so_Entidadvideodemo> listavideodemo;
+public class sp_Adaptervideodemo extends RecyclerView.Adapter<sp_Adaptervideodemo.VideosDemotrativoHolder> {
+    List<sp_Entidadvideodemo> listavideodemo;
 
-    public so_Adaptervideodemo(List<so_Entidadvideodemo> listavideodemo){
+    public sp_Adaptervideodemo(List<sp_Entidadvideodemo> listavideodemo){
         this.listavideodemo = listavideodemo;
     }
 
     @NonNull
     @Override
     public VideosDemotrativoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View vista= LayoutInflater.from(parent.getContext()).inflate(R.layout.so_itemdetallevideosdemo,parent,false);
+        View vista= LayoutInflater.from(parent.getContext()).inflate(R.layout.sp_itemdetallevideosdemo,parent,false);
         RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         vista.setLayoutParams(layoutParams);
-        return new so_Adaptervideodemo.VideosDemotrativoHolder(vista);
+        return new sp_Adaptervideodemo.VideosDemotrativoHolder(vista);
     }
 
     @Override

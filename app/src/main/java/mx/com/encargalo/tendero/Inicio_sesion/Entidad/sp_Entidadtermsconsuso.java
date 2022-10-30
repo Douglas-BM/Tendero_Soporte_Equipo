@@ -1,10 +1,10 @@
 package mx.com.encargalo.tendero.Inicio_sesion.Entidad;
 
-public class so_Entidadtermsconsuso {
+public class sp_Entidadtermsconsuso {
     private String termsConsUsoTitulo;
     private String termsConsUsoContenido;
 
-    public so_Entidadtermsconsuso() {
+    public sp_Entidadtermsconsuso() {
     }
 
     public String getTermsConsUsoTitulo() {

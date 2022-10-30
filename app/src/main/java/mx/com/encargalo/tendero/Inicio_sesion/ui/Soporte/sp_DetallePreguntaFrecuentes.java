@@ -24,23 +24,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import mx.com.encargalo.R;
-import mx.com.encargalo.tendero.Inicio_sesion.Adapter.so_AdapterPreguntasFrecuentes;
-import mx.com.encargalo.tendero.Inicio_sesion.Adapter.so_Adaptervideodemo;
-import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_EntidadPreguntasFrecuentes;
-import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_Entidadvideodemo;
+import mx.com.encargalo.tendero.Inicio_sesion.Adapter.sp_AdapterPreguntasFrecuentes;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_EntidadPreguntasFrecuentes;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link so_DetallePreguntaFrecuentes#newInstance} factory method to
+ * Use the {@link sp_DetallePreguntaFrecuentes#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class so_DetallePreguntaFrecuentes extends Fragment {
+public class sp_DetallePreguntaFrecuentes extends Fragment {
 
     RecyclerView rclvprefrec;
-    ArrayList<so_EntidadPreguntasFrecuentes> listapregfrec;
+    ArrayList<sp_EntidadPreguntasFrecuentes> listapregfrec;
     ProgressDialog progress;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
@@ -54,7 +51,7 @@ public class so_DetallePreguntaFrecuentes extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public so_DetallePreguntaFrecuentes() {
+    public sp_DetallePreguntaFrecuentes() {
         // Required empty public constructor
     }
 
@@ -67,8 +64,8 @@ public class so_DetallePreguntaFrecuentes extends Fragment {
      * @return A new instance of fragment so_DetallePreguntaFrecuentes.
      */
     // TODO: Rename and change types and number of parameters
-    public static so_DetallePreguntaFrecuentes newInstance(String param1, String param2) {
-        so_DetallePreguntaFrecuentes fragment = new so_DetallePreguntaFrecuentes();
+    public static sp_DetallePreguntaFrecuentes newInstance(String param1, String param2) {
+        sp_DetallePreguntaFrecuentes fragment = new sp_DetallePreguntaFrecuentes();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -89,7 +86,7 @@ public class so_DetallePreguntaFrecuentes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_so__detalle_pregunta_frecuentes, container, false);
+        View view= inflater.inflate(R.layout.fragment_sp__detalle_pregunta_frecuentes, container, false);
         listapregfrec=new ArrayList<>();
         rclvprefrec = view.findViewById(R.id.rclv_detallepregfrec);
 
@@ -106,18 +103,18 @@ public class so_DetallePreguntaFrecuentes extends Fragment {
         progress= new ProgressDialog(getContext());
         progress.setMessage("Consulta datos");
         progress.show();
-        String url= "http://192.168.0.17/ApisPT2/c_ConsultarPregFrecuente.php";
+        String url= "http://192.168.0.6/ApisPT2/c_ConsultarPregFrecuente.php";
         url=url.replace(" ","%20");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                so_EntidadPreguntasFrecuentes miusuario=null;
+                sp_EntidadPreguntasFrecuentes miusuario=null;
                 JSONArray json=response.optJSONArray("preguntafrec");
 
                 try{
                     listapregfrec.clear();
                     for(int i=0; i<json.length();i++){
-                        miusuario=new so_EntidadPreguntasFrecuentes();
+                        miusuario=new sp_EntidadPreguntasFrecuentes();
                         JSONObject jsonObject=null;
                         jsonObject=json.getJSONObject(i);
                         miusuario.setPregunta(jsonObject.optString("prfrPregunta"));
@@ -127,7 +124,7 @@ public class so_DetallePreguntaFrecuentes extends Fragment {
                         listapregfrec.add(miusuario);
                     }
                     progress.hide();
-                    so_AdapterPreguntasFrecuentes adapterpregfre=new so_AdapterPreguntasFrecuentes(listapregfrec);
+                    sp_AdapterPreguntasFrecuentes adapterpregfre=new sp_AdapterPreguntasFrecuentes(listapregfrec);
                     rclvprefrec.setAdapter(adapterpregfre);
                 }catch (JSONException e){
                     e.printStackTrace();

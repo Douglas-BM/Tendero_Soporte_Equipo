@@ -29,12 +29,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import mx.com.encargalo.R;
-import mx.com.encargalo.tendero.Inicio_sesion.Adapter.so_Adaptervideodemo;
-import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_Entidadtermsconsuso;
-import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_Entidadvideodemo;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_Entidadtermsconsuso;
 
 
-public class so_Terminoscondicionesdetalles extends DialogFragment{
+public class sp_Terminoscondicionesdetalles extends DialogFragment{
 
     Button btnCerrarTermsConsDetalle;
     Activity actividad;
@@ -55,7 +53,7 @@ public class so_Terminoscondicionesdetalles extends DialogFragment{
     private String mParam1;
     private String mParam2;
 
-    public so_Terminoscondicionesdetalles() {
+    public sp_Terminoscondicionesdetalles() {
         // Required empty public constructor
     }
 
@@ -68,8 +66,8 @@ public class so_Terminoscondicionesdetalles extends DialogFragment{
      * @return A new instance of fragment so_Terminoscondicionesdetalles.
      */
     // TODO: Rename and change types and number of parameters
-    public static so_Terminoscondicionesdetalles newInstance(String param1, String param2) {
-        so_Terminoscondicionesdetalles fragment = new so_Terminoscondicionesdetalles();
+    public static sp_Terminoscondicionesdetalles newInstance(String param1, String param2) {
+        sp_Terminoscondicionesdetalles fragment = new sp_Terminoscondicionesdetalles();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -97,7 +95,7 @@ public class so_Terminoscondicionesdetalles extends DialogFragment{
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
-        View v = inflater.inflate(R.layout.fragment_so__terminoscondicionesdetalles, null);
+        View v = inflater.inflate(R.layout.fragment_sp__terminoscondicionesdetalles, null);
         builder.setView(v);
 
         btnCerrarTermsConsDetalle = v.findViewById(R.id.btnCerrarTermsConsDetalle);
@@ -128,17 +126,17 @@ public class so_Terminoscondicionesdetalles extends DialogFragment{
         progress.show();
         switch (tipoDetalle){
             case "terminos_condiciones":{
-                url= "http://192.168.0.17/ApisPT2/c_ConsultarTermsCondicionesUso.php";
+                url= "http://192.168.0.6/ApisPT2/c_ConsultarTermsCondicionesUso.php";
                 jsonArrayName = "termscondicionesuso";
                 break;
             }
             case "politica_privacidad":{
-                url= "http://192.168.0.17/ApisPT2/c_ConsultarPoliticasPrivacidad.php";
+                url= "http://192.168.0.6/ApisPT2/c_ConsultarPoliticasPrivacidad.php";
                 jsonArrayName = "politicasprivacidad";
                 break;
             }
             case "productos_prohibidos":{
-                url= "http://192.168.0.17/ApisPT2/c_ConsultarProducProhibido.php";
+                url= "http://192.168.0.6/ApisPT2/c_ConsultarProducProhibido.php";
                 jsonArrayName = "producprohibido";
                 break;
             }
@@ -150,11 +148,11 @@ public class so_Terminoscondicionesdetalles extends DialogFragment{
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                so_Entidadtermsconsuso detalles = null;
+                sp_Entidadtermsconsuso detalles = null;
                 JSONArray json=response.optJSONArray(finalJsonArrayName);
 
                 try {
-                    detalles = new so_Entidadtermsconsuso();
+                    detalles = new sp_Entidadtermsconsuso();
                     JSONObject jsonObject = null;
                     jsonObject=json.getJSONObject(0);
 

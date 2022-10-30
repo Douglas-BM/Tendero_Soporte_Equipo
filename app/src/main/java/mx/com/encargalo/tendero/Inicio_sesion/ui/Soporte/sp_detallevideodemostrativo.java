@@ -26,18 +26,18 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import mx.com.encargalo.R;
-import mx.com.encargalo.tendero.Inicio_sesion.Adapter.so_Adaptervideodemo;
-import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_Entidadvideodemo;
+import mx.com.encargalo.tendero.Inicio_sesion.Adapter.sp_Adaptervideodemo;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_Entidadvideodemo;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link so_detallevideodemostrativo#newInstance} factory method to
+ * Use the {@link sp_detallevideodemostrativo#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class so_detallevideodemostrativo extends Fragment {
+public class sp_detallevideodemostrativo extends Fragment {
 
     RecyclerView rclvvideodemo;
-    ArrayList<so_Entidadvideodemo> listavideodemo;
+    ArrayList<sp_Entidadvideodemo> listavideodemo;
     ProgressDialog progress;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
@@ -52,7 +52,7 @@ public class so_detallevideodemostrativo extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public so_detallevideodemostrativo() {
+    public sp_detallevideodemostrativo() {
         // Required empty public constructor
     }
 
@@ -65,8 +65,8 @@ public class so_detallevideodemostrativo extends Fragment {
      * @return A new instance of fragment so_detallevideodemostrativo.
      */
     // TODO: Rename and change types and number of parameters
-    public static so_detallevideodemostrativo newInstance(String param1, String param2) {
-        so_detallevideodemostrativo fragment = new so_detallevideodemostrativo();
+    public static sp_detallevideodemostrativo newInstance(String param1, String param2) {
+        sp_detallevideodemostrativo fragment = new sp_detallevideodemostrativo();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -87,7 +87,7 @@ public class so_detallevideodemostrativo extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_so_detallevideodemostrativo, container, false);
+        View view= inflater.inflate(R.layout.fragment_sp_detallevideodemostrativo, container, false);
         listavideodemo=new ArrayList<>();
         rclvvideodemo = view.findViewById(R.id.rclv_listavideodemo);
 
@@ -103,18 +103,18 @@ public class so_detallevideodemostrativo extends Fragment {
         progress= new ProgressDialog(getContext());
         progress.setMessage("Consulta datos");
         progress.show();
-        String url= "http://192.168.0.17/ApisPT2/c_ConsultarVideoDemostrativo.php";
+        String url= "http://192.168.0.6/ApisPT2/c_ConsultarVideoDemostrativo.php";
         url=url.replace(" ","%20");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                so_Entidadvideodemo miusuario=null;
+                sp_Entidadvideodemo miusuario=null;
                 JSONArray json=response.optJSONArray("videosdemo");
 
                 try{
                     listavideodemo.clear();
                     for(int i=0; i<json.length();i++){
-                        miusuario=new so_Entidadvideodemo();
+                        miusuario=new sp_Entidadvideodemo();
                         JSONObject jsonObject=null;
                         jsonObject=json.getJSONObject(i);
                         miusuario.setVideotitulo(jsonObject.optString("videTitulo"));
@@ -123,7 +123,7 @@ public class so_detallevideodemostrativo extends Fragment {
                         listavideodemo.add(miusuario);
                     }
                     progress.hide();
-                    so_Adaptervideodemo adapterIndicadores=new so_Adaptervideodemo(listavideodemo);
+                    sp_Adaptervideodemo adapterIndicadores=new sp_Adaptervideodemo(listavideodemo);
                     rclvvideodemo.setAdapter(adapterIndicadores);
                 }catch (JSONException e){
                     e.printStackTrace();

@@ -1,16 +1,16 @@
 package mx.com.encargalo.tendero.Inicio_sesion.Entidad;
 
-public class so_EntidadPreguntasFrecuentes {
+public class sp_EntidadPreguntasFrecuentes {
     private int idpregunta;
     private String pregunta;
     private String respuesta;
     private String URL_video;
     private String URL_img;
 
-    public so_EntidadPreguntasFrecuentes() {
+    public sp_EntidadPreguntasFrecuentes() {
     }
 
-    public so_EntidadPreguntasFrecuentes(int idpregunta, String pregunta, String respuesta, String URL_video, String URL_img) {
+    public sp_EntidadPreguntasFrecuentes(int idpregunta, String pregunta, String respuesta, String URL_video, String URL_img) {
         this.idpregunta = idpregunta;
         this.pregunta = pregunta;
         this.respuesta = respuesta;

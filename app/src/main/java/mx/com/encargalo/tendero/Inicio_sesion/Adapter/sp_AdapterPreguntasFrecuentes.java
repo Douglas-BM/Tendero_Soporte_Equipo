@@ -11,25 +11,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import mx.com.encargalo.R;
-import mx.com.encargalo.tendero.Inicio_sesion.Entidad.so_EntidadPreguntasFrecuentes;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_EntidadPreguntasFrecuentes;
 
-public class so_AdapterPreguntasFrecuentes extends RecyclerView.Adapter<so_AdapterPreguntasFrecuentes.PreguntasFrecuentesHolder> {
+public class sp_AdapterPreguntasFrecuentes extends RecyclerView.Adapter<sp_AdapterPreguntasFrecuentes.PreguntasFrecuentesHolder> {
 
-    List<so_EntidadPreguntasFrecuentes> listapregfrec;
-    public so_AdapterPreguntasFrecuentes(List<so_EntidadPreguntasFrecuentes> listaIndicadores){
+    List<sp_EntidadPreguntasFrecuentes> listapregfrec;
+    public sp_AdapterPreguntasFrecuentes(List<sp_EntidadPreguntasFrecuentes> listaIndicadores){
         this.listapregfrec = listaIndicadores;
     }
     @NonNull
     @Override
-    public so_AdapterPreguntasFrecuentes.PreguntasFrecuentesHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View vista= LayoutInflater.from(parent.getContext()).inflate(R.layout.so_itempreguntasfrecuentes,parent,false);
+    public sp_AdapterPreguntasFrecuentes.PreguntasFrecuentesHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View vista= LayoutInflater.from(parent.getContext()).inflate(R.layout.sp_itempreguntasfrecuentes,parent,false);
         RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         vista.setLayoutParams(layoutParams);
-        return new so_AdapterPreguntasFrecuentes.PreguntasFrecuentesHolder(vista);
+        return new sp_AdapterPreguntasFrecuentes.PreguntasFrecuentesHolder(vista);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull so_AdapterPreguntasFrecuentes.PreguntasFrecuentesHolder holder, int position) {
+    public void onBindViewHolder(@NonNull sp_AdapterPreguntasFrecuentes.PreguntasFrecuentesHolder holder, int position) {
         holder.txt_so_02_pregunta.setText(String.valueOf(listapregfrec.get(position).getPregunta()));
         holder.txt_so_02_respuesta.setText(String.valueOf(listapregfrec.get(position).getRespuesta()));
         holder.txt_so_02_urlvideo.setText(String.valueOf(listapregfrec.get(position).getURL_video()));

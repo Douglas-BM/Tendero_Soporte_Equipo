@@ -1,11 +1,11 @@
 package mx.com.encargalo.tendero.Inicio_sesion.Entidad;
 
-public class so_Entidadvideodemo {
+public class sp_Entidadvideodemo {
     private String Videotitulo;
     private String videodescri;
     private String videoURL;
 
-    public so_Entidadvideodemo() {
+    public sp_Entidadvideodemo() {
     }
 
     public String getVideotitulo() {
