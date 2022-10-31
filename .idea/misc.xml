@@ -8,19 +8,22 @@
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_so__detalle_pregunta_frecuentes.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_so_detallevideodemostrativo.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg01.xml" value="0.36666666666666664" />
-        <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg02_1.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg02_1.xml" value="0.25" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg02_2.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg02_3.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg03.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg04.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frg06.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_sp_frgacercade.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/fragment_tn_frgmenumitienda.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/so_itemdetallevideosdemo.xml" value="0.36666666666666664" />
         <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/so_itempreguntasfrecuentes.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/sp_itemdetallevideosdemo.xml" value="0.36102564102564105" />
+        <entry key="..\:/ciclo 10/proyectos 2/Equipo/Tendero_soporte_equipo/app/src/main/res/layout/sp_itempreguntasfrecuentes.xml" value="0.36102564102564105" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

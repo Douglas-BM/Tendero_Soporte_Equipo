@@ -12,10 +12,10 @@ import mx.com.encargalo.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link sp_frg02_2#newInstance} factory method to
+ * Use the {@link sp_Detallepreguntas#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class sp_frg02_2 extends Fragment {
+public class sp_Detallepreguntas extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class sp_frg02_2 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public sp_frg02_2() {
+    public sp_Detallepreguntas() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class sp_frg02_2 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment sp_frg02_2.
+     * @return A new instance of fragment sp_frg02_3.
      */
     // TODO: Rename and change types and number of parameters
-    public static sp_frg02_2 newInstance(String param1, String param2) {
-        sp_frg02_2 fragment = new sp_frg02_2();
+    public static sp_Detallepreguntas newInstance(String param1, String param2) {
+        sp_Detallepreguntas fragment = new sp_Detallepreguntas();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class sp_frg02_2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sp_frg02_2, container, false);
+        return inflater.inflate(R.layout.fragment_sp_detallepreguntas, container, false);
     }
 }

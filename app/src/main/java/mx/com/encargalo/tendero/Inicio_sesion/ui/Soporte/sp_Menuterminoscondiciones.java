@@ -12,10 +12,10 @@ import mx.com.encargalo.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link sp_frg04#newInstance} factory method to
+ * Use the {@link sp_Menuterminoscondiciones#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class sp_frg04 extends Fragment implements View.OnClickListener {
+public class sp_Menuterminoscondiciones extends Fragment implements View.OnClickListener {
 
     Button btnTermsConsUso, btnPolitPrivacidad, btnProducProhibidos;
 
@@ -28,7 +28,7 @@ public class sp_frg04 extends Fragment implements View.OnClickListener {
     private String mParam1;
     private String mParam2;
 
-    public sp_frg04() {
+    public sp_Menuterminoscondiciones() {
         // Required empty public constructor
     }
 
@@ -41,8 +41,8 @@ public class sp_frg04 extends Fragment implements View.OnClickListener {
      * @return A new instance of fragment sp_frg04.
      */
     // TODO: Rename and change types and number of parameters
-    public static sp_frg04 newInstance(String param1, String param2) {
-        sp_frg04 fragment = new sp_frg04();
+    public static sp_Menuterminoscondiciones newInstance(String param1, String param2) {
+        sp_Menuterminoscondiciones fragment = new sp_Menuterminoscondiciones();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,7 +63,7 @@ public class sp_frg04 extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_sp_frg04, container, false);
+        View view= inflater.inflate(R.layout.fragment_sp_menuterminoscondiciones, container, false);
 
         btnTermsConsUso = view.findViewById(R.id.btn_so_04_terminos_condiciones);
         btnPolitPrivacidad = view.findViewById(R.id.btn_so_04_politica_privacidad);

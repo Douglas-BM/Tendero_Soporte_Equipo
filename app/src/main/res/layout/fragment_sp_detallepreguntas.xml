@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tendero.Inicio_sesion.ui.Soporte.sp_frg02_3">
+    tools:context=".tendero.Inicio_sesion.ui.Soporte.sp_Detallepreguntas">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
