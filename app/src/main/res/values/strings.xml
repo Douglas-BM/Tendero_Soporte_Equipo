@@ -71,9 +71,10 @@
     <string name="menu_soporte_notificaciones">Notificaciones</string>
     <string name="menu_soporte_notificaciones_texto">Activa las notificaciones para mantener al tanto de tu actividad</string>
     <string name="menu_soporte_notificaciones_switch_1">Mensajes</string>
-    <string name="menu_soporte_notificaciones_switch_2">Pedidos</string>
-    <string name="menu_soporte_notificaciones_switch_3">Actividad de cuenta</string>
-    <string name="menu_soporte_notificaciones_switch_4">Actualizaciones</string>
+    <string name="menu_soporte_notificaciones_switch_2">Actividad de cuenta</string>
+    <string name="menu_soporte_notificaciones_switch_3">Nueva orden</string>
+    <string name="menu_soporte_notificaciones_switch_4">Segumiento de ordenes</string>
+    <string name="menu_soporte_notificaciones_switch_5">Orden completada</string>
     <!--  SO_04  -->
     <string name="menu_soporte_terminos_condiciones_terminos">Terminos y condiciones de Uso</string>
     <string name="menu_soporte_terminos_condiciones_politicas">Política de privacidad y datos personales</string>

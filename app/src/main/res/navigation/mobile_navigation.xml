@@ -50,6 +50,15 @@
         <action
             android:id="@+id/action_nav_soporte_to_nav_acercade"
             app:destination="@id/nav_acercade" />
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_configuracionnotificaiones2"
+            app:destination="@id/nav_configuracionnotificaiones" />
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_detallevideodemo"
+            app:destination="@id/nav_detallevideodemo" />
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_terminosYcondiciones"
+            app:destination="@id/nav_terminosYcondiciones" />
     </fragment>
     <fragment
         android:id="@+id/nav_configuracionnotificaiones"
@@ -59,19 +68,22 @@
 
     <fragment
         android:id="@+id/nav_centroayuda"
-        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_menucentroayuda"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgmenucentroayuda"
         android:label="@string/menu_soporte_centro_de_ayuda"
-        tools:layout="@layout/fragment_sp_menucentroayuda" >
+        tools:layout="@layout/fragment_sp_frgmenucentroayuda" >
         <action
             android:id="@+id/action_nav_centroayuda_to_nav_detallevideodemo"
             app:destination="@id/nav_detallevideodemo" />
+        <action
+            android:id="@+id/action_nav_centroayuda_to_nav_detallepregfre"
+            app:destination="@id/nav_detallepregfre" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_terminosYcondiciones"
-        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_Menuterminoscondiciones"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgMenuterminoscondiciones"
         android:label="@string/menu_soporte_terminos_condiciones_terminos"
-        tools:layout="@layout/fragment_sp_menuterminoscondiciones" >
+        tools:layout="@layout/fragment_sp_frgmenuterminoscondiciones" >
         <action
             android:id="@+id/action_nav_terminosYcondiciones_to_nav_soporte"
             app:destination="@id/nav_soporte" />
@@ -79,14 +91,14 @@
 
     <fragment
         android:id="@+id/nav_detallevideodemo"
-        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_detallevideodemostrativo"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgdetallevideodemostrativo"
         android:label="@string/menu_soporte_centro_de_ayuda_btn_2"
-        tools:layout="@layout/fragment_sp_detallevideodemostrativo" />
+        tools:layout="@layout/fragment_sp_frgdetallevideodemostrativo" />
     <fragment
         android:id="@+id/nav_detallepregfre"
-        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_DetallePreguntaFrecuentes"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgDetallePreguntaFrecuentes"
         android:label="@string/menu_soporte_centro_de_ayuda_btn_1"
-        tools:layout="@layout/fragment_sp__detalle_pregunta_frecuentes" />
+        tools:layout="@layout/fragment_sp__frgdetalle_pregunta_frecuentes" />
     <fragment
         android:id="@+id/nav_acercade"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgacercade"

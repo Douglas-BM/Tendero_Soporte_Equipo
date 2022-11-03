@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/ic_prueba" />
+                    android:src="@drawable/sp_iconcentroayuda" />
 
                 <Button
                     android:id="@+id/btn_centroayuda"
@@ -68,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/ic_prueba" />
+                    android:src="@drawable/sp_iconnotificaciones" />
 
                 <Button
                     android:id="@+id/btn_Notificaciones"
@@ -96,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/ic_prueba" />
+                    android:src="@drawable/sp_iconterminosycondicionesmenu" />
 
                 <Button
                     android:id="@+id/btn_terminois_condiciones"
@@ -124,7 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/ic_prueba" />
+                    android:src="@drawable/sp_iconcompartirencargalo" />
 
                 <Button
                     android:id="@+id/btn_compartir"
@@ -152,7 +152,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/ic_prueba" />
+                    android:src="@drawable/sp_iconacercade" />
 
                 <Button
                     android:id="@+id/btn_acerca_de"
@@ -180,7 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/ic_prueba" />
+                    android:src="@drawable/sp_iconcerrarsesion" />
 
                 <Button
                     android:id="@+id/btn_cerrar_sesion"

@@ -32,21 +32,26 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
     PendingIntent pendingIntent;
 
     Switch stch_mensajes;
-    Switch stch_pedidos;
-    Switch stch_actividad;
-    Switch stch_actualizacion;
+    Switch stch_actividadcuenta;
+    Switch stch_nuevaorden;
+    Switch stch_seguimientoorden;
+    Switch stch_ordencompletada;
+
 
     private final static String Channel_ID1="Notificaciones mensajes";
     private final static int Notificaiones_ID1=0;
 
-    private final static String Channel_ID2="Notificaciones Pedidos";
+    private final static String Channel_ID2="Notificaciones Actividad de la cuenta";
     private final static int Notificaiones_ID2=2;
 
-    private final static String Channel_ID3="Notificaciones Actividad";
+    private final static String Channel_ID3="Notificaciones nueva orden";
     private final static int Notificaiones_ID3=3;
 
-    private final static String Channel_ID4="Notificaciones Actualizaciones";
+    private final static String Channel_ID4="Notificaciones Seguimineto ordenes";
     private final static int Notificaiones_ID4=4;
+
+    private final static String Channel_ID5="Notificaciones Orden completada";
+    private final static int Notificaiones_ID5=5;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -97,9 +102,10 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
         btn_guardarconnoti=view.findViewById(R.id.btn_guardarconfiguracionnotificaciones);
 
         stch_mensajes=view.findViewById(R.id.stch_confmensajes);
-        stch_pedidos=view.findViewById(R.id.stch_confpedidos);
-        stch_actividad=view.findViewById(R.id.stch_confactividad);
-        stch_actualizacion=view.findViewById(R.id.stch_confactualizaciones);
+        stch_actividadcuenta=view.findViewById(R.id.stch_confavtividadcuenta);
+        stch_nuevaorden=view.findViewById(R.id.stch_confnuevaorden);
+        stch_seguimientoorden=view.findViewById(R.id.stch_confsegumientoorden);
+        stch_ordencompletada=view.findViewById(R.id.stch_confordencompletada);
 
         btn_guardarconnoti.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,19 +115,23 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
                     CrearCanalNotificacionesmensajes();
                 }
 
-                if (stch_pedidos.isChecked()){
-                    Crearnotificaionpedidos();
-                    CrearCanalNotificacionesPedidos();
+                if (stch_actividadcuenta.isChecked()){
+                    CrearnotificaionActividadcuentas();
+                    CrearCanalNotificacionesActividadcuenta();
                 }
 
-                if (stch_actividad.isChecked()){
-                    Crearnotificacionesactividad();
-                    CrearCanalNotificacionesactividad();
+                if (stch_nuevaorden.isChecked()){
+                    CrearnotificacionesNuevaorden();
+                    CrearCanalNotificacionesNuevaorden();
                 }
 
-                if (stch_actualizacion.isChecked()){
-                    Crearnotificaionactualizacion();
-                    CrearCanalNotificacionesactualizacion();
+                if (stch_seguimientoorden.isChecked()){
+                    CrearnotificaionSeguiminetoorden();
+                    CrearCanalNotificacionesSeguimientoorden();
+                }
+                if (stch_ordencompletada.isChecked()){
+                    Crearnotificaionordencompletada();
+                    CrearCanalNotificacionesordencompletada();
                 }
 
             }
@@ -157,9 +167,9 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
 
     }
 
-    private void CrearCanalNotificacionesPedidos() {
+    private void CrearCanalNotificacionesActividadcuenta() {
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-            CharSequence name="Notificaicones Pedidos";
+            CharSequence name="Notificaicones Activivad";
             NotificationChannel notificationChannel2=new NotificationChannel(Channel_ID2,name, NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager notificationManager2= (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager2.createNotificationChannel(notificationChannel2);
@@ -167,11 +177,11 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
         }
     }
 
-    private void Crearnotificaionpedidos(){
+    private void CrearnotificaionActividadcuentas(){
         NotificationCompat.Builder builder2=new NotificationCompat.Builder(getContext(),Channel_ID2);
         builder2.setSmallIcon(R.drawable.ic_prueba);
-        builder2.setContentTitle("Nuevo Pedidos");
-        builder2.setContentText("Prueba de Pedidos");
+        builder2.setContentTitle("Nuevo Actividad");
+        builder2.setContentText("Prueba de Actividad de cuenta");
         builder2.setColor(Color.RED);
         builder2.setPriority(2);
         builder2.setLights(Color.MAGENTA,1000,1000);
@@ -184,9 +194,9 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
 
     }
 
-    private void CrearCanalNotificacionesactividad() {
+    private void CrearCanalNotificacionesNuevaorden() {
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-            CharSequence name="Notificaicones Actividad";
+            CharSequence name="Notificaicones Nueva orden";
             NotificationChannel notificationChannel=new NotificationChannel(Channel_ID3,name, NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager notificationManager= (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(notificationChannel);
@@ -194,11 +204,11 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
         }
     }
 
-    private void Crearnotificacionesactividad(){
+    private void CrearnotificacionesNuevaorden(){
         NotificationCompat.Builder builder=new NotificationCompat.Builder(getContext(),Channel_ID3);
         builder.setSmallIcon(R.drawable.ic_prueba);
-        builder.setContentTitle("Nuevo Activiad");
-        builder.setContentText("Prueba de Actividad");
+        builder.setContentTitle("Nuevo Orden");
+        builder.setContentText("Prueba de nueva orden");
         builder.setColor(Color.GREEN);
         builder.setPriority(3);
         builder.setLights(Color.MAGENTA,1000,1000);
@@ -210,9 +220,9 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
 
     }
 
-    private void CrearCanalNotificacionesactualizacion() {
+    private void CrearCanalNotificacionesSeguimientoorden() {
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-            CharSequence name="Notificaicones Actualizaciones";
+            CharSequence name="Notificaicones Seguimiento orden";
             NotificationChannel notificationChannel=new NotificationChannel(Channel_ID4,name, NotificationManager.IMPORTANCE_HIGH);
             NotificationManager notificationManager= (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(notificationChannel);
@@ -220,11 +230,11 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
         }
     }
 
-    private void Crearnotificaionactualizacion(){
+    private void CrearnotificaionSeguiminetoorden(){
         NotificationCompat.Builder builder=new NotificationCompat.Builder(getContext(),Channel_ID4);
         builder.setSmallIcon(R.drawable.ic_prueba);
-        builder.setContentTitle("Nuevo Actualizacion");
-        builder.setContentText("Prueba de Actualizciones");
+        builder.setContentTitle("Nuevo Seguimiento orden");
+        builder.setContentText("Prueba de Seguimiento orden");
         builder.setColor(Color.YELLOW);
         builder.setPriority(4);
         builder.setLights(Color.MAGENTA,1000,1000);
@@ -233,6 +243,32 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
 
         NotificationManagerCompat notificationManagerCompat=NotificationManagerCompat.from(getContext());
         notificationManagerCompat.notify(Notificaiones_ID4,builder.build());
+
+    }
+
+    private void CrearCanalNotificacionesordencompletada() {
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            CharSequence name="Notificaicones Orden Completada";
+            NotificationChannel notificationChannel=new NotificationChannel(Channel_ID5,name, NotificationManager.IMPORTANCE_HIGH);
+            NotificationManager notificationManager= (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(notificationChannel);
+
+        }
+    }
+
+    private void Crearnotificaionordencompletada(){
+        NotificationCompat.Builder builder=new NotificationCompat.Builder(getContext(),Channel_ID5);
+        builder.setSmallIcon(R.drawable.ic_prueba);
+        builder.setContentTitle("Nuevo Orden completada");
+        builder.setContentText("Prueba de Orden completada");
+        builder.setColor(Color.YELLOW);
+        builder.setPriority(5);
+        builder.setLights(Color.MAGENTA,1000,1000);
+        builder.setVibrate(new long[]{1000,1000,1000,1000});
+        builder.setDefaults(Notification.DEFAULT_SOUND);
+
+        NotificationManagerCompat notificationManagerCompat=NotificationManagerCompat.from(getContext());
+        notificationManagerCompat.notify(Notificaiones_ID5,builder.build());
 
     }
 }

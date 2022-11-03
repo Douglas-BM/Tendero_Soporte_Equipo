@@ -28,13 +28,14 @@ import java.util.ArrayList;
 import mx.com.encargalo.R;
 import mx.com.encargalo.tendero.Inicio_sesion.Adapter.sp_Adaptervideodemo;
 import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_Entidadvideodemo;
+import mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.Util.Util;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link sp_detallevideodemostrativo#newInstance} factory method to
+ * Use the {@link sp_frgdetallevideodemostrativo#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class sp_detallevideodemostrativo extends Fragment {
+public class sp_frgdetallevideodemostrativo extends Fragment {
 
     RecyclerView rclvvideodemo;
     ArrayList<sp_Entidadvideodemo> listavideodemo;
@@ -52,7 +53,7 @@ public class sp_detallevideodemostrativo extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public sp_detallevideodemostrativo() {
+    public sp_frgdetallevideodemostrativo() {
         // Required empty public constructor
     }
 
@@ -65,8 +66,8 @@ public class sp_detallevideodemostrativo extends Fragment {
      * @return A new instance of fragment so_detallevideodemostrativo.
      */
     // TODO: Rename and change types and number of parameters
-    public static sp_detallevideodemostrativo newInstance(String param1, String param2) {
-        sp_detallevideodemostrativo fragment = new sp_detallevideodemostrativo();
+    public static sp_frgdetallevideodemostrativo newInstance(String param1, String param2) {
+        sp_frgdetallevideodemostrativo fragment = new sp_frgdetallevideodemostrativo();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -87,7 +88,7 @@ public class sp_detallevideodemostrativo extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_sp_detallevideodemostrativo, container, false);
+        View view= inflater.inflate(R.layout.fragment_sp_frgdetallevideodemostrativo, container, false);
         listavideodemo=new ArrayList<>();
         rclvvideodemo = view.findViewById(R.id.rclv_listavideodemo);
 
@@ -103,7 +104,7 @@ public class sp_detallevideodemostrativo extends Fragment {
         progress= new ProgressDialog(getContext());
         progress.setMessage("Consulta datos");
         progress.show();
-        String url= "http://192.168.0.6/ApisPT2/c_ConsultarVideoDemostrativo.php";
+        String url= Util.RUTA+"c_ConsultarVideoDemostrativo.php";
         url=url.replace(" ","%20");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override

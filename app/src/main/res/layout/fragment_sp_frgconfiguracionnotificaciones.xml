@@ -40,7 +40,7 @@
                     android:textSize="20sp"/>
 
                 <Switch
-                    android:id="@+id/stch_confpedidos"
+                    android:id="@+id/stch_confavtividadcuenta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_2"
@@ -48,7 +48,7 @@
                     android:textSize="20sp"/>
 
                 <Switch
-                    android:id="@+id/stch_confactividad"
+                    android:id="@+id/stch_confnuevaorden"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_3"
@@ -56,10 +56,17 @@
                     android:textSize="20sp"/>
 
                 <Switch
-                    android:id="@+id/stch_confactualizaciones"
+                    android:id="@+id/stch_confsegumientoorden"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_4"
+                    android:paddingBottom="10dp"
+                    android:textSize="20sp"/>
+                <Switch
+                    android:id="@+id/stch_confordencompletada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_soporte_notificaciones_switch_5"
                     android:paddingBottom="10dp"
                     android:textSize="20sp"/>
 

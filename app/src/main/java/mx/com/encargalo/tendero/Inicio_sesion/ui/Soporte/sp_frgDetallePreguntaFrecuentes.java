@@ -28,13 +28,14 @@ import java.util.ArrayList;
 import mx.com.encargalo.R;
 import mx.com.encargalo.tendero.Inicio_sesion.Adapter.sp_AdapterPreguntasFrecuentes;
 import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_EntidadPreguntasFrecuentes;
+import mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.Util.Util;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link sp_DetallePreguntaFrecuentes#newInstance} factory method to
+ * Use the {@link sp_frgDetallePreguntaFrecuentes#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class sp_DetallePreguntaFrecuentes extends Fragment {
+public class sp_frgDetallePreguntaFrecuentes extends Fragment {
 
     RecyclerView rclvprefrec;
     ArrayList<sp_EntidadPreguntasFrecuentes> listapregfrec;
@@ -51,7 +52,7 @@ public class sp_DetallePreguntaFrecuentes extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public sp_DetallePreguntaFrecuentes() {
+    public sp_frgDetallePreguntaFrecuentes() {
         // Required empty public constructor
     }
 
@@ -64,8 +65,8 @@ public class sp_DetallePreguntaFrecuentes extends Fragment {
      * @return A new instance of fragment so_DetallePreguntaFrecuentes.
      */
     // TODO: Rename and change types and number of parameters
-    public static sp_DetallePreguntaFrecuentes newInstance(String param1, String param2) {
-        sp_DetallePreguntaFrecuentes fragment = new sp_DetallePreguntaFrecuentes();
+    public static sp_frgDetallePreguntaFrecuentes newInstance(String param1, String param2) {
+        sp_frgDetallePreguntaFrecuentes fragment = new sp_frgDetallePreguntaFrecuentes();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -86,7 +87,7 @@ public class sp_DetallePreguntaFrecuentes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_sp__detalle_pregunta_frecuentes, container, false);
+        View view= inflater.inflate(R.layout.fragment_sp__frgdetalle_pregunta_frecuentes, container, false);
         listapregfrec=new ArrayList<>();
         rclvprefrec = view.findViewById(R.id.rclv_detallepregfrec);
 
@@ -103,7 +104,7 @@ public class sp_DetallePreguntaFrecuentes extends Fragment {
         progress= new ProgressDialog(getContext());
         progress.setMessage("Consulta datos");
         progress.show();
-        String url= "http://192.168.0.6/ApisPT2/c_ConsultarPregFrecuente.php";
+        String url= Util.RUTA+"c_ConsultarPregFrecuente.php?idclaseper=1";
         url=url.replace(" ","%20");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override

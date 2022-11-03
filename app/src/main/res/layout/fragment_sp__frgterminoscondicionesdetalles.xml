@@ -6,7 +6,7 @@
     android:orientation="vertical"
 
     android:background="@drawable/termscons_details_background"
-    tools:context=".tendero.Inicio_sesion.ui.Soporte.sp_Terminoscondicionesdetalles">
+    tools:context=".tendero.Inicio_sesion.ui.Soporte.sp_frgTerminoscondicionesdetalles">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

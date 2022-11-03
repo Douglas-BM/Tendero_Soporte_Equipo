@@ -30,9 +30,10 @@ import org.json.JSONObject;
 
 import mx.com.encargalo.R;
 import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_Entidadtermsconsuso;
+import mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.Util.Util;
 
 
-public class sp_Terminoscondicionesdetalles extends DialogFragment{
+public class sp_frgTerminoscondicionesdetalles extends DialogFragment{
 
     Button btnCerrarTermsConsDetalle;
     Activity actividad;
@@ -53,7 +54,7 @@ public class sp_Terminoscondicionesdetalles extends DialogFragment{
     private String mParam1;
     private String mParam2;
 
-    public sp_Terminoscondicionesdetalles() {
+    public sp_frgTerminoscondicionesdetalles() {
         // Required empty public constructor
     }
 
@@ -66,8 +67,8 @@ public class sp_Terminoscondicionesdetalles extends DialogFragment{
      * @return A new instance of fragment so_Terminoscondicionesdetalles.
      */
     // TODO: Rename and change types and number of parameters
-    public static sp_Terminoscondicionesdetalles newInstance(String param1, String param2) {
-        sp_Terminoscondicionesdetalles fragment = new sp_Terminoscondicionesdetalles();
+    public static sp_frgTerminoscondicionesdetalles newInstance(String param1, String param2) {
+        sp_frgTerminoscondicionesdetalles fragment = new sp_frgTerminoscondicionesdetalles();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -95,7 +96,7 @@ public class sp_Terminoscondicionesdetalles extends DialogFragment{
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
-        View v = inflater.inflate(R.layout.fragment_sp__terminoscondicionesdetalles, null);
+        View v = inflater.inflate(R.layout.fragment_sp__frgterminoscondicionesdetalles, null);
         builder.setView(v);
 
         btnCerrarTermsConsDetalle = v.findViewById(R.id.btnCerrarTermsConsDetalle);
@@ -126,17 +127,17 @@ public class sp_Terminoscondicionesdetalles extends DialogFragment{
         progress.show();
         switch (tipoDetalle){
             case "terminos_condiciones":{
-                url= "http://192.168.0.6/ApisPT2/c_ConsultarTermsCondicionesUso.php";
+                url= Util.RUTA+"c_ConsultarTermsCondicionesUso.php";
                 jsonArrayName = "termscondicionesuso";
                 break;
             }
             case "politica_privacidad":{
-                url= "http://192.168.0.6/ApisPT2/c_ConsultarPoliticasPrivacidad.php";
+                url= Util.RUTA+"c_ConsultarPoliticasPrivacidad.php";
                 jsonArrayName = "politicasprivacidad";
                 break;
             }
             case "productos_prohibidos":{
-                url= "http://192.168.0.6/ApisPT2/c_ConsultarProducProhibido.php";
+                url= Util.RUTA+"c_ConsultarProducProhibido.php";
                 jsonArrayName = "producprohibido";
                 break;
             }

@@ -12,10 +12,10 @@ import mx.com.encargalo.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link sp_Menuterminoscondiciones#newInstance} factory method to
+ * Use the {@link sp_frgMenuterminoscondiciones#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class sp_Menuterminoscondiciones extends Fragment implements View.OnClickListener {
+public class sp_frgMenuterminoscondiciones extends Fragment implements View.OnClickListener {
 
     Button btnTermsConsUso, btnPolitPrivacidad, btnProducProhibidos;
 
@@ -28,7 +28,7 @@ public class sp_Menuterminoscondiciones extends Fragment implements View.OnClick
     private String mParam1;
     private String mParam2;
 
-    public sp_Menuterminoscondiciones() {
+    public sp_frgMenuterminoscondiciones() {
         // Required empty public constructor
     }
 
@@ -41,8 +41,8 @@ public class sp_Menuterminoscondiciones extends Fragment implements View.OnClick
      * @return A new instance of fragment sp_frg04.
      */
     // TODO: Rename and change types and number of parameters
-    public static sp_Menuterminoscondiciones newInstance(String param1, String param2) {
-        sp_Menuterminoscondiciones fragment = new sp_Menuterminoscondiciones();
+    public static sp_frgMenuterminoscondiciones newInstance(String param1, String param2) {
+        sp_frgMenuterminoscondiciones fragment = new sp_frgMenuterminoscondiciones();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,7 +63,7 @@ public class sp_Menuterminoscondiciones extends Fragment implements View.OnClick
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_sp_menuterminoscondiciones, container, false);
+        View view= inflater.inflate(R.layout.fragment_sp_frgmenuterminoscondiciones, container, false);
 
         btnTermsConsUso = view.findViewById(R.id.btn_so_04_terminos_condiciones);
         btnPolitPrivacidad = view.findViewById(R.id.btn_so_04_politica_privacidad);
@@ -82,21 +82,21 @@ public class sp_Menuterminoscondiciones extends Fragment implements View.OnClick
         switch (v.getId()){
             case R.id.btn_so_04_terminos_condiciones:{
                 bundle.putString("tipo", "terminos_condiciones");
-                sp_Terminoscondicionesdetalles dialogoDetalle = new sp_Terminoscondicionesdetalles();
+                sp_frgTerminoscondicionesdetalles dialogoDetalle = new sp_frgTerminoscondicionesdetalles();
                 dialogoDetalle.setArguments(bundle);
                 dialogoDetalle.show(getActivity().getSupportFragmentManager(), "terminos_condiciones");
                 break;
             }
             case R.id.btn_so_04_politica_privacidad:{
                 bundle.putString("tipo", "politica_privacidad");
-                sp_Terminoscondicionesdetalles dialogoDetalle = new sp_Terminoscondicionesdetalles();
+                sp_frgTerminoscondicionesdetalles dialogoDetalle = new sp_frgTerminoscondicionesdetalles();
                 dialogoDetalle.show(getActivity().getSupportFragmentManager(), "politica_privacidad");
                 dialogoDetalle.setArguments(bundle);
                 break;
             }
             case R.id.btn_so_04_produc_prohibidos:{
                 bundle.putString("tipo", "productos_prohibidos");
-                sp_Terminoscondicionesdetalles dialogoDetalle = new sp_Terminoscondicionesdetalles();
+                sp_frgTerminoscondicionesdetalles dialogoDetalle = new sp_frgTerminoscondicionesdetalles();
                 dialogoDetalle.show(getActivity().getSupportFragmentManager(), "productos_prohibidos");
                 dialogoDetalle.setArguments(bundle);
                 break;
