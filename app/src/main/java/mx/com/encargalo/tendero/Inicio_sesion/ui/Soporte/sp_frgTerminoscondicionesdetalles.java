@@ -127,17 +127,17 @@ public class sp_frgTerminoscondicionesdetalles extends DialogFragment{
         progress.show();
         switch (tipoDetalle){
             case "terminos_condiciones":{
-                url= Util.RUTA+"c_ConsultarTermsCondicionesUso.php";
+                url= Util.RUTA+"c_consultar_terms_condiciones_uso.php";
                 jsonArrayName = "termscondicionesuso";
                 break;
             }
             case "politica_privacidad":{
-                url= Util.RUTA+"c_ConsultarPoliticasPrivacidad.php";
+                url= Util.RUTA+"c_consultar_politicas_privacidad.php";
                 jsonArrayName = "politicasprivacidad";
                 break;
             }
             case "productos_prohibidos":{
-                url= Util.RUTA+"c_ConsultarProducProhibido.php";
+                url= Util.RUTA+"c_consultar_produc_prohibido.php";
                 jsonArrayName = "producprohibido";
                 break;
             }

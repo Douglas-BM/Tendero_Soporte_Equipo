@@ -39,7 +39,7 @@
                 <VideoView
                     android:id="@+id/VV_urlvideodemo"
                     android:layout_width="match_parent"
-                    android:layout_height="206dp" />
+                    android:layout_height="280dp" />
             </FrameLayout>
 
         </LinearLayout>
@@ -49,13 +49,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-                android:id="@+id/YP_videoplayer"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:autoPlay="false"
-                app:showFullScreenButton="true"
-                app:showVideoCurrentTime="true" />
+                android:layout_height="match_parent">
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:id="@+id/YP_videoplayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:showFullScreenButton="true"
+                    app:showVideoCurrentTime="true" />
+            </FrameLayout>
+
+
         </LinearLayout>
 
     </LinearLayout>

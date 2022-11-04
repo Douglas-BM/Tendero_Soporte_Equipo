@@ -104,7 +104,7 @@ public class sp_frgDetallePreguntaFrecuentes extends Fragment {
         progress= new ProgressDialog(getContext());
         progress.setMessage("Consulta datos");
         progress.show();
-        String url= Util.RUTA+"c_ConsultarPregFrecuente.php?idclaseper=1";
+        String url= Util.RUTA+"c_consultar_preg_frecuente.php?idclaseper=1";
         url=url.replace(" ","%20");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -118,6 +118,7 @@ public class sp_frgDetallePreguntaFrecuentes extends Fragment {
                         miusuario=new sp_EntidadPreguntasFrecuentes();
                         JSONObject jsonObject=null;
                         jsonObject=json.getJSONObject(i);
+                        miusuario.setIdpregunta(jsonObject.optInt("idPregunta"));
                         miusuario.setPregunta(jsonObject.optString("prfrPregunta"));
                         miusuario.setRespuesta(jsonObject.optString("prfrRespuesta"));
                         miusuario.setURL_video(jsonObject.optString("prfrURLVideo"));

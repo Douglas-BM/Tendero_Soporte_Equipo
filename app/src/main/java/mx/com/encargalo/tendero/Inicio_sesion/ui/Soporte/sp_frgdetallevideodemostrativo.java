@@ -104,7 +104,7 @@ public class sp_frgdetallevideodemostrativo extends Fragment {
         progress= new ProgressDialog(getContext());
         progress.setMessage("Consulta datos");
         progress.show();
-        String url= Util.RUTA+"c_ConsultarVideoDemostrativo.php";
+        String url= Util.RUTA+"c_consultar_video_demostrativo.php";
         url=url.replace(" ","%20");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
