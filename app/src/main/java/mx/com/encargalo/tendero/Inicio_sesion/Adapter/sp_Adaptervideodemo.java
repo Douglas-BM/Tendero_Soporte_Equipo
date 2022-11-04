@@ -46,8 +46,8 @@ public class sp_Adaptervideodemo extends RecyclerView.Adapter<sp_Adaptervideodem
     public void onBindViewHolder(@NonNull VideosDemotrativoHolder holder, int position) {
         holder.txttitulovideodemo.setText(String.valueOf(listavideodemo.get(position).getVideotitulo()));
         holder.txtdescripvideodemo.setText(String.valueOf(listavideodemo.get(position).getVideodescri()));
-        //  holder.videodemo.setVisibility(View.INVISIBLE);
-        //  holder.youTubePlayerView.setVisibility(View.INVISIBLE);
+          holder.videodemo.setVisibility(View.INVISIBLE);
+          holder.youTubePlayerView.setVisibility(View.INVISIBLE);
         String urlcom=String.valueOf(listavideodemo.get(position).getVideoURL());
         urlcom=urlcom.substring(0,32);
 
