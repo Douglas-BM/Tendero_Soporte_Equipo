@@ -11,17 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="20dp">
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/menu_soporte"
-            android:textSize="24dp"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            />
+        
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,14 +23,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/activity_margin">
 
                 <ImageView
                     android:id="@+id/ic_centroayuda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/sp_iconcentroayuda" />
+                    android:src="@drawable/sp_iconcentro_de_ayuda" />
 
                 <Button
                     android:id="@+id/btn_centroayuda"
@@ -48,7 +40,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/menu_soporte_item_1"
-                    android:background="@color/green_600"/>
+                    android:textAlignment="textStart"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/soporte_details_background"
+                    android:drawableRight="@drawable/sp_iconflecha"
+                    android:paddingRight="@dimen/activity_margin"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -61,14 +57,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/activity_margin">
 
                 <ImageView
                     android:id="@+id/ic_notificaciones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/sp_iconnotificaciones" />
+                    android:src="@drawable/sp_iconnotificacionesnuevo" />
 
                 <Button
                     android:id="@+id/btn_Notificaciones"
@@ -76,7 +74,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/menu_soporte_item_2"
-                    android:background="@color/green_600"/>
+                    android:textAlignment="textStart"
+                    android:paddingLeft="10dp"
+                    android:drawableRight="@drawable/sp_iconflecha"
+                    android:paddingRight="@dimen/activity_margin"
+                    android:background="@drawable/soporte_details_background"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -89,14 +91,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/activity_margin">
 
                 <ImageView
                     android:id="@+id/ic_terminos_condiciones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/sp_iconterminosycondicionesmenu" />
+                    android:src="@drawable/sp_iconterminos_y_condiciones_menu" />
 
                 <Button
                     android:id="@+id/btn_terminois_condiciones"
@@ -104,7 +108,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/menu_soporte_item_3"
-                    android:background="@color/green_600"/>
+                    android:textAlignment="textStart"
+                    android:paddingLeft="10dp"
+                    android:drawableRight="@drawable/sp_iconflecha"
+                    android:paddingRight="@dimen/activity_margin"
+                    android:background="@drawable/soporte_details_background"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -117,22 +125,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/activity_margin">
 
                 <ImageView
                     android:id="@+id/ic_compartir"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/sp_iconcompartirencargalo" />
+                    android:src="@drawable/sp_iconcompartir" />
 
                 <Button
                     android:id="@+id/btn_compartir"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:drawableRight="@drawable/sp_iconflecha"
+                    android:paddingRight="@dimen/activity_margin"
                     android:text="@string/menu_soporte_item_4"
-                    android:background="@color/green_600"/>
+                    android:textAlignment="textStart"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/soporte_details_background"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -145,14 +159,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/activity_margin">
 
                 <ImageView
                     android:id="@+id/ic_Acerca_de"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/sp_iconacercade" />
+                    android:src="@drawable/sp_icerca_de" />
 
                 <Button
                     android:id="@+id/btn_acerca_de"
@@ -160,7 +176,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/menu_soporte_item_5"
-                    android:background="@color/green_600"/>
+                    android:textAlignment="textStart"
+                    android:paddingLeft="10dp"
+                    android:drawableRight="@drawable/sp_iconflecha"
+                    android:paddingRight="@dimen/activity_margin"
+                    android:background="@drawable/soporte_details_background"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -173,14 +193,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/ic_cerrar_sesion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/sp_iconcerrarsesion" />
+                    android:src="@drawable/sp_iconcerrar_sesion" />
 
                 <Button
                     android:id="@+id/btn_cerrar_sesion"
@@ -188,7 +209,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Cerrar Sesion"
-                    android:background="@color/orangePrimary"/>
+
+                    android:background="@drawable/soporte_details_background"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

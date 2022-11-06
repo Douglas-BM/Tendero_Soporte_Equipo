@@ -1,13 +1,16 @@
 package mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -19,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,6 +46,8 @@ public class sp_frgDetallePreguntaFrecuentes extends Fragment {
     ProgressDialog progress;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
+
+    Bundle bundle;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -118,7 +124,6 @@ public class sp_frgDetallePreguntaFrecuentes extends Fragment {
                         miusuario=new sp_EntidadPreguntasFrecuentes();
                         JSONObject jsonObject=null;
                         jsonObject=json.getJSONObject(i);
-                        miusuario.setIdpregunta(jsonObject.optInt("idPregunta"));
                         miusuario.setPregunta(jsonObject.optString("prfrPregunta"));
                         miusuario.setRespuesta(jsonObject.optString("prfrRespuesta"));
                         miusuario.setURL_video(jsonObject.optString("prfrURLVideo"));

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@color/cyan_400"
+        android:background="@color/cyan_600"
         android:orientation="vertical">
 
         <TextView
@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Titulo video demo"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/txt_descvideodemo"

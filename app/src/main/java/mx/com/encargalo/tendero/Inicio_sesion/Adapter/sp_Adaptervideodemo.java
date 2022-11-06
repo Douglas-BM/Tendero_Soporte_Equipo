@@ -61,6 +61,7 @@ public class sp_Adaptervideodemo extends RecyclerView.Adapter<sp_Adaptervideodem
             holder.youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                 @Override
                 public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                    //youTubePlayer.loadVideo(finalId,0);
                     youTubePlayer.loadVideo(finalId,0);
                     youTubePlayer.pause();
                 }
@@ -75,7 +76,7 @@ public class sp_Adaptervideodemo extends RecyclerView.Adapter<sp_Adaptervideodem
             MediaController mediaController=new MediaController(holder.videodemo.getContext());
             holder.videodemo.setMediaController(mediaController);
             mediaController.setAnchorView(holder.videodemo);
-            holder.videodemo.start();
+            holder.videodemo.pause();
         }
 
 

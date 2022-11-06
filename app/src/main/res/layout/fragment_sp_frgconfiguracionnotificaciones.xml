@@ -16,14 +16,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/menu_soporte_notificaciones"
-                android:textSize="36dp"
-                android:textStyle="bold"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,48 +28,52 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_1"
-                    android:paddingBottom="10dp"
-                    android:textSize="20sp"/>
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:textSize="16dp"/>
 
                 <Switch
                     android:id="@+id/stch_confavtividadcuenta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_2"
-                    android:paddingBottom="10dp"
-                    android:textSize="20sp"/>
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:textSize="16dp"/>
 
                 <Switch
                     android:id="@+id/stch_confnuevaorden"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_3"
-                    android:paddingBottom="10dp"
-                    android:textSize="20sp"/>
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:textSize="16dp"/>
 
                 <Switch
                     android:id="@+id/stch_confsegumientoorden"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_4"
-                    android:paddingBottom="10dp"
-                    android:textSize="20sp"/>
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:textSize="16dp"/>
                 <Switch
                     android:id="@+id/stch_confordencompletada"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/menu_soporte_notificaciones_switch_5"
-                    android:paddingBottom="10dp"
-                    android:textSize="20sp"/>
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:textSize="16dp"/>
 
                 <Button
                     android:id="@+id/btn_guardarconfiguracionnotificaciones"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Guardar"
                     android:layout_gravity="center"
-                    android:paddingBottom="10dp"
-                    android:textSize="20sp"/>
+                    android:background="@drawable/soporte_details_background"
+                    android:backgroundTint="@color/redPrimary"
+                    android:layout_marginTop="200dp"
+                    android:text="Guardar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dp"/>
             </LinearLayout>
 
         </LinearLayout>

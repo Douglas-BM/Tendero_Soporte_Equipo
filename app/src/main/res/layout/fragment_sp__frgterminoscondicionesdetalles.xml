@@ -24,6 +24,7 @@
         android:layout_height="500dp"
         android:layout_gravity="center"
         android:text=""
+        android:padding="@dimen/activity_margin"
         android:textSize="16sp"
         android:justificationMode="inter_word"></TextView>
     <Button
@@ -34,6 +35,7 @@
         android:textAllCaps="false"
         android:layout_gravity="center"
         android:layout_marginBottom="15dp"
+        android:background="@drawable/soporte_details_background"
         android:backgroundTint="@color/redPrimary"
         android:textColor="@color/colorPrimary"></Button>
 

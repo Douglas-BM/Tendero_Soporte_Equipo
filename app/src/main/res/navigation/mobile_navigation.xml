@@ -63,7 +63,7 @@
     <fragment
         android:id="@+id/nav_configuracionnotificaiones"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgconfiguracionnotificaciones"
-        android:label="@string/menu_soporte"
+        android:label="@string/menu_soporte_notificaciones"
         tools:layout="@layout/fragment_sp_frgconfiguracionnotificaciones" />
 
     <fragment
@@ -104,4 +104,11 @@
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgacercade"
         android:label="@string/menu_soporte_acerca_de"
         tools:layout="@layout/fragment_sp_frgacercade" />
+    <fragment
+        android:id="@+id/nav_detallepreguntas"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgDetallepreguntas"
+        android:label="@string/menu_soporte_Preguntas_Frecuentes"
+        tools:layout="@layout/fragment_sp_frgdetallepreguntas" />
+
+
 </navigation>
