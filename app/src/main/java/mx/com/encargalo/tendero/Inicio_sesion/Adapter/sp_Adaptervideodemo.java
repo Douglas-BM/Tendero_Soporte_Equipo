@@ -24,10 +24,10 @@ import java.util.List;
 
 import mx.com.encargalo.R;
 import mx.com.encargalo.tendero.Inicio_sesion.Entidad.sp_Entidadvideodemo;
+import mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.Util.Util;
 
 public class sp_Adaptervideodemo extends RecyclerView.Adapter<sp_Adaptervideodemo.VideosDemotrativoHolder> {
     List<sp_Entidadvideodemo> listavideodemo;
-    private Context context;
 
     public sp_Adaptervideodemo(List<sp_Entidadvideodemo> listavideodemo){
         this.listavideodemo = listavideodemo;
@@ -49,9 +49,50 @@ public class sp_Adaptervideodemo extends RecyclerView.Adapter<sp_Adaptervideodem
           holder.videodemo.setVisibility(View.INVISIBLE);
           holder.youTubePlayerView.setVisibility(View.INVISIBLE);
         String urlcom=String.valueOf(listavideodemo.get(position).getVideoURL());
-        urlcom=urlcom.substring(0,32);
 
-        if (urlcom.equals("https://www.youtube.com/watch?v=")){
+//        urlcom=urlcom.substring(0,32);
+//        if (urlcom.equals("https://www.youtube.com/watch?v=")){
+//            holder.youTubePlayerView.setVisibility(View.VISIBLE);
+//            holder.videodemo.setVisibility(View.INVISIBLE);
+//            holder.videodemo.setMinimumHeight(0);
+//            String id=String.valueOf(listavideodemo.get(position).getVideoURL());
+//            id=id.replace("https://www.youtube.com/watch?v=", "");
+//            final String finalId = id;
+//            holder.youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+//                @Override
+//                public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+//                    youTubePlayer.loadVideo(finalId,0);
+//                    youTubePlayer.pause();
+//                }
+//            });
+//
+//        }else{
+//            String url =  Util.RUTA +  listavideodemo.get(position).getVideoURL();
+//            holder.videodemo.setVisibility(View.VISIBLE);
+//            holder.youTubePlayerView.setVisibility(View.INVISIBLE);
+//            holder.youTubePlayerView.setMinimumHeight(0);
+//            holder.videodemo.setVideoURI(Uri.parse(url));
+//            holder.videodemo.start();
+//            MediaController mediaController=new MediaController(holder.videodemo.getContext());
+//            holder.videodemo.setMediaController(mediaController);
+//            mediaController.setAnchorView(holder.videodemo);
+//            holder.videodemo.pause();
+//        }
+
+        urlcom=urlcom.substring(0,16);
+        if (urlcom.equals("vidDemostracion/")){
+
+            String url =  Util.RUTA +  listavideodemo.get(position).getVideoURL();
+            holder.videodemo.setVisibility(View.VISIBLE);
+            holder.youTubePlayerView.setVisibility(View.INVISIBLE);
+            holder.youTubePlayerView.setMinimumHeight(0);
+            holder.videodemo.setVideoURI(Uri.parse(url));
+            holder.videodemo.start();
+            MediaController mediaController=new MediaController(holder.videodemo.getContext());
+            holder.videodemo.setMediaController(mediaController);
+            mediaController.setAnchorView(holder.videodemo);
+            holder.videodemo.pause();
+        }else{
             holder.youTubePlayerView.setVisibility(View.VISIBLE);
             holder.videodemo.setVisibility(View.INVISIBLE);
             holder.videodemo.setMinimumHeight(0);
@@ -61,27 +102,11 @@ public class sp_Adaptervideodemo extends RecyclerView.Adapter<sp_Adaptervideodem
             holder.youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                 @Override
                 public void onReady(@NonNull YouTubePlayer youTubePlayer) {
-                    //youTubePlayer.loadVideo(finalId,0);
                     youTubePlayer.loadVideo(finalId,0);
                     youTubePlayer.pause();
                 }
             });
-
-        }else{
-            holder.videodemo.setVisibility(View.VISIBLE);
-            holder.youTubePlayerView.setVisibility(View.INVISIBLE);
-            holder.youTubePlayerView.setMinimumHeight(0);
-            holder.videodemo.setVideoURI(Uri.parse(String.valueOf(listavideodemo.get(position).getVideoURL())));
-            holder.videodemo.start();
-            MediaController mediaController=new MediaController(holder.videodemo.getContext());
-            holder.videodemo.setMediaController(mediaController);
-            mediaController.setAnchorView(holder.videodemo);
-            holder.videodemo.pause();
         }
-
-
-
-
 
     }
 

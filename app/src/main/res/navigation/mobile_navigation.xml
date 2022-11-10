@@ -59,6 +59,9 @@
         <action
             android:id="@+id/action_nav_soporte_to_nav_terminosYcondiciones"
             app:destination="@id/nav_terminosYcondiciones" />
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_codigotienda"
+            app:destination="@id/nav_codigotienda" />
     </fragment>
     <fragment
         android:id="@+id/nav_configuracionnotificaiones"
@@ -98,7 +101,11 @@
         android:id="@+id/nav_detallepregfre"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgDetallePreguntaFrecuentes"
         android:label="@string/menu_soporte_centro_de_ayuda_btn_1"
-        tools:layout="@layout/fragment_sp__frgdetalle_pregunta_frecuentes" />
+        tools:layout="@layout/fragment_sp__frgdetalle_pregunta_frecuentes" >
+        <action
+            android:id="@+id/action_nav_detallepregfre_to_nav_detallepreguntas"
+            app:destination="@id/nav_detallepreguntas" />
+    </fragment>
     <fragment
         android:id="@+id/nav_acercade"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgacercade"
@@ -109,6 +116,12 @@
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgDetallepreguntas"
         android:label="@string/menu_soporte_Preguntas_Frecuentes"
         tools:layout="@layout/fragment_sp_frgdetallepreguntas" />
+
+    <fragment
+        android:id="@+id/nav_codigotienda"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgCodigoTienda"
+        android:label="@string/menu_soporte_Codigo_de_Tienda"
+        tools:layout="@layout/fragment_sp_frg_codigo_tienda" />
 
 
 </navigation>

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -29,6 +31,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -52,6 +57,10 @@ public class sp_frgDetallepreguntas extends Fragment {
     TextView txt_so_02_3_PregFrecuentes, txt_so_02_3_Pregunta1, txt_so_02_3_preg1_content;
     ImageView img_so_02_3_preg1_image;
     VideoView View_so_02_3_preg1;
+
+    YouTubePlayerView ytpv_vidpregfre;
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -107,6 +116,7 @@ public class sp_frgDetallepreguntas extends Fragment {
         txt_so_02_3_preg1_content = view.findViewById(R.id.txt_so_02_3_preg1_content);
         img_so_02_3_preg1_image = view.findViewById(R.id.img_so_02_3_preg1_image);
         View_so_02_3_preg1 = view.findViewById(R.id.View_so_02_3_preg1);
+        ytpv_vidpregfre=view.findViewById(R.id.ytpv_videopregfrec);
 
         if (data != null){
             String preg = data.getString("pregunta");
@@ -116,10 +126,48 @@ public class sp_frgDetallepreguntas extends Fragment {
 
             txt_so_02_3_Pregunta1.setText(preg);
             txt_so_02_3_preg1_content.setText(resp);
+
+            if (url_vid.equals("")) {
+
+                Toast.makeText(getContext(), "No existe video", Toast.LENGTH_SHORT).show();
+            }else{
+                String urlcom=url_vid;
+                urlcom=urlcom.substring(0,23);
+
+                if (urlcom.equals("vidPreguntasFrecuentes/")){
+                    String url =  Util.RUTA +  url_vid;
+                    View_so_02_3_preg1.setVisibility(View.VISIBLE);
+                    ytpv_vidpregfre.setVisibility(View.INVISIBLE);
+                    ytpv_vidpregfre.setMinimumHeight(0);
+                    View_so_02_3_preg1.setVideoURI(Uri.parse(url));
+                    View_so_02_3_preg1.start();
+                    MediaController mediaController=new MediaController(getContext());
+                    View_so_02_3_preg1.setMediaController(mediaController);
+                    mediaController.setAnchorView(View_so_02_3_preg1);
+                    View_so_02_3_preg1.pause();
+                }else{
+                    ytpv_vidpregfre.setVisibility(View.VISIBLE);
+                    View_so_02_3_preg1.setVisibility(View.INVISIBLE);
+                    View_so_02_3_preg1.setMinimumHeight(0);
+                    String id=String.valueOf(url_vid);
+                    id=id.replace("https://www.youtube.com/watch?v=", "");
+                    final String finalId = id;
+                    ytpv_vidpregfre.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+                        @Override
+                        public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                            //youTubePlayer.loadVideo(finalId,0);
+                            youTubePlayer.loadVideo(finalId,0);
+                            youTubePlayer.pause();
+                        }
+                    });
+                }
+            }
+
         }
         else{
             Toast.makeText(getContext(), "Error al cargar los datos", Toast.LENGTH_SHORT).show();
         }
+
 
         return view;
     }

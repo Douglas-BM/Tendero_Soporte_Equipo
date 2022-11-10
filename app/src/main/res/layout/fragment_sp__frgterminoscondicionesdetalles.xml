@@ -3,40 +3,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-
     android:background="@drawable/termscons_details_background"
+
+    android:orientation="vertical"
     tools:context=".tendero.Inicio_sesion.ui.Soporte.sp_frgTerminoscondicionesdetalles">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-    android:id="@+id/txt_so_04_detalle_titulo"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="20sp"
-    android:layout_margin="10dp"
-        android:text="@string/menu_soporte_terminos_condiciones_terminos"
-        android:layout_gravity="center"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/txt_so_04_detalle_contenido"
-        android:layout_width="300dp"
-        android:layout_height="500dp"
-        android:layout_gravity="center"
-        android:text=""
-        android:padding="@dimen/activity_margin"
-        android:textSize="16sp"
-        android:justificationMode="inter_word"></TextView>
-    <Button
-        android:id="@+id/btnCerrarTermsConsDetalle"
-        android:layout_width="170dp"
-        android:layout_height="55dp"
-        android:text="Cerrar"
-        android:textAllCaps="false"
-        android:layout_gravity="center"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/soporte_details_background"
-        android:backgroundTint="@color/redPrimary"
-        android:textColor="@color/colorPrimary"></Button>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_so_04_detalle_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="@string/menu_soporte_terminos_condiciones_terminos"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_so_04_detalle_contenido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:inputType=""
+                        android:justificationMode="inter_word"
+                        android:padding="@dimen/activity_margin"
+                        android:text=""
+                        android:textSize="16sp"></TextView>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+
+                android:id="@+id/btnCerrarTermsConsDetalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/soporte_details_background"
+                android:backgroundTint="@color/redPrimary"
+                android:padding="10dp"
+                android:text="Cerrar"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"></Button>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

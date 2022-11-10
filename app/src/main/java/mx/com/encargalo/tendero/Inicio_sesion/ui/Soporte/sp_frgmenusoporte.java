@@ -16,7 +16,7 @@ import mx.com.encargalo.R;
 
 public class sp_frgmenusoporte extends Fragment {
 
-    Button btnconfNotificaciones,btncentroayuda,btnTerminosyCondiciones,btncompartir, btnacercade;
+    Button btnconfNotificaciones,btncentroayuda,btnTerminosyCondiciones,btncompartir, btnacercade,btn_codigotienda;
 
 
     @Override
@@ -29,6 +29,7 @@ public class sp_frgmenusoporte extends Fragment {
         btnTerminosyCondiciones=view.findViewById(R.id.btn_terminois_condiciones);
         btncompartir=view.findViewById(R.id.btn_compartir);
         btnacercade=view.findViewById(R.id.btn_acerca_de);
+        btn_codigotienda=view.findViewById(R.id.btn_spcodigo_tienda);
 
 
         btnconfNotificaciones.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +71,13 @@ public class sp_frgmenusoporte extends Fragment {
             }
         });
 
+
+        btn_codigotienda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_codigotienda);
+            }
+        });
 
         return view;
     }
