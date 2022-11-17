@@ -106,11 +106,17 @@
             android:id="@+id/action_nav_detallepregfre_to_nav_detallepreguntas"
             app:destination="@id/nav_detallepreguntas" />
     </fragment>
+
     <fragment
         android:id="@+id/nav_acercade"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgacercade"
         android:label="@string/menu_soporte_acerca_de"
-        tools:layout="@layout/fragment_sp_frgacercade" />
+        tools:layout="@layout/fragment_sp_frgacercade">
+        <action
+            android:id="@+id/action_nav_acercade_to_nav_desarrolladores"
+            app:destination="@id/nav_desarrolladores" />
+    </fragment>
+
     <fragment
         android:id="@+id/nav_detallepreguntas"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgDetallepreguntas"
@@ -122,6 +128,12 @@
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgCodigoTienda"
         android:label="@string/menu_soporte_Codigo_de_Tienda"
         tools:layout="@layout/fragment_sp_frg_codigo_tienda" />
+
+    <fragment
+        android:id="@+id/nav_desarrolladores"
+        android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgdesarrolladores"
+        android:label="@string/menu_soporte_acerca_de_desarrolladores"
+        tools:layout="@layout/fragment_sp_frgdesarrolladores" />
 
 
 </navigation>

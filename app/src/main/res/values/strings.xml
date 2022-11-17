@@ -85,7 +85,7 @@
     <string name="menu_soporte_acerca_de_btn_1">Website</string>
     <string name="menu_soporte_acerca_de_btn_2">Facebook</string>
     <string name="menu_soporte_acerca_de_btn_3">Instagram</string>
-    <string name="menu_soporte_acerca_de_btn_4">Cerrar</string>
+    <string name="menu_soporte_acerca_de_btn_4">Desarrolladores</string>
     <!--  SO_06  -->
     <string name="menu_soporte_compartir_website">Website</string>
     <string name="menu_soporte_compartir_facebook">Facebook</string>
@@ -93,7 +93,11 @@
     <!--  SO_06  -->
     <string name="menu_soporte_Codigo_de_Tienda">Còdigo de tienda</string>
 
-
+    <!--  SO_07  -->
+    <string name="menu_soporte_acerca_de_desarrolladores">Desarrolladores</string>
+    <string name="menu_soporte_acerca_de_desarrolladores_txt_autor">Autor</string>
+    <string name="menu_soporte_acerca_de_desarrolladores_txt_cargo">Cargo</string>
+    <string name="menu_soporte_acerca_de_desarrolladores_txt_correo">Correo</string>
     <!--        Modulo Tienda(mit)                 -->
 
 
