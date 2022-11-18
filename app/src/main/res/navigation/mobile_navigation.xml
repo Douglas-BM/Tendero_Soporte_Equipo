@@ -133,7 +133,7 @@
         android:id="@+id/nav_desarrolladores"
         android:name="mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte.sp_frgdesarrolladores"
         android:label="@string/menu_soporte_acerca_de_desarrolladores"
-        tools:layout="@layout/fragment_sp_frgdesarrolladores" />
+        tools:layout="@layout/fragment_sp_frgdesarrolladores"/>
 
 
 </navigation>
