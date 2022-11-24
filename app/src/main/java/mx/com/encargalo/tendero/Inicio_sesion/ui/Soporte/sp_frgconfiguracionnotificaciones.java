@@ -5,6 +5,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -107,32 +108,63 @@ public class sp_frgconfiguracionnotificaciones extends Fragment {
         stch_seguimientoorden=view.findViewById(R.id.stch_confsegumientoorden);
         stch_ordencompletada=view.findViewById(R.id.stch_confordencompletada);
 
+        SharedPreferences sp = getContext().getSharedPreferences("ConfiguracionNotificaciones",0);
+        int activarnotuno = sp.getInt("Notuno",1);
+        int activarnotdos = sp.getInt("Notdos",1);
+        int activarnottres = sp.getInt("Notres",1);
+        int activarnotcuatro = sp.getInt("Notcuatro",1);
+        int activarnotcinco = sp.getInt("Notcinco",1);
+
+        if (activarnotuno==1){ stch_mensajes.setChecked(false); }else{stch_mensajes.setChecked(true);}
+        if (activarnotdos==1){ stch_actividadcuenta.setChecked(false); }else{stch_actividadcuenta.setChecked(true);}
+        if (activarnottres==1){ stch_nuevaorden.setChecked(false); }else{stch_nuevaorden.setChecked(true);}
+        if (activarnotcuatro==1){ stch_seguimientoorden.setChecked(false); }else{stch_seguimientoorden.setChecked(true);}
+        if (activarnotcinco==1){ stch_ordencompletada.setChecked(false); }else{stch_ordencompletada.setChecked(true);}
+
         btn_guardarconnoti.setOnClickListener(new View.OnClickListener() {
+
+            SharedPreferences switnotificaiones= getContext().getSharedPreferences("ConfiguracionNotificaciones",0);
+            SharedPreferences.Editor editorswi=switnotificaiones.edit();
             @Override
             public void onClick(View v) {
                 if (stch_mensajes.isChecked()){
                     Crearnotificaionmensaje();
                     CrearCanalNotificacionesmensajes();
+                    editorswi.putInt("Notuno",0);
+                    editorswi.putString("Tipouno","Mensajes");
+                }else{
+                    editorswi.putInt("Notuno",1);
                 }
 
                 if (stch_actividadcuenta.isChecked()){
                     CrearnotificaionActividadcuentas();
                     CrearCanalNotificacionesActividadcuenta();
-                }
+                    editorswi.putInt("Notdos",0);
+                    editorswi.putString("Tipodos","Actividad Cuenta");
+                }else{editorswi.putInt("Notdos",1);}
 
                 if (stch_nuevaorden.isChecked()){
                     CrearnotificacionesNuevaorden();
                     CrearCanalNotificacionesNuevaorden();
+                    editorswi.putInt("Notres",0);
+                    editorswi.putString("TipoTres","Nueva orden");
+                }else{
+                    editorswi.putInt("Notres",1);
                 }
 
                 if (stch_seguimientoorden.isChecked()){
                     CrearnotificaionSeguiminetoorden();
                     CrearCanalNotificacionesSeguimientoorden();
-                }
+                    editorswi.putInt("Notcuatro",0);
+                    editorswi.putString("Tipocuatro","Seguimiento Orden");
+                }else{editorswi.putInt("Notcuatro",1);}
                 if (stch_ordencompletada.isChecked()){
                     Crearnotificaionordencompletada();
                     CrearCanalNotificacionesordencompletada();
-                }
+                    editorswi.putInt("Notcinco",0);
+                    editorswi.putString("Tipodos","Orden Completada");
+                }else{editorswi.putInt("Notcinco",1);}
+                editorswi.commit();
 
             }
         });

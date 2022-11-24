@@ -2,6 +2,7 @@ package mx.com.encargalo.tendero.Inicio_sesion.ui.Soporte;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -110,7 +111,9 @@ public class sp_frgCodigoTienda extends Fragment {
         progreso = new ProgressDialog(getContext());
         progreso.setMessage("consultando ...");
         progreso.show();
-        String url =  Util.RUTA +  "c_consultar_codigo_tienda.php?idpersona=COD0001";
+        SharedPreferences capcred= getContext().getSharedPreferences("Usuariocredencial",0);
+        String credid=capcred.getString("CredId","");
+        String url =  Util.RUTA +  "c_consultar_codigo_tienda_soporte.php?idpersona="+credid;
         url = url.replace(" ", "%20");
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override

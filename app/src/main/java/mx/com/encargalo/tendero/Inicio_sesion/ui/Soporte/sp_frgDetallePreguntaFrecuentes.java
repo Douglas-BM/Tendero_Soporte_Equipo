@@ -131,6 +131,7 @@ public class sp_frgDetallePreguntaFrecuentes extends Fragment {
                         listapregfrec.add(miusuario);
                     }
                     progress.hide();
+                    miusuario.getIdpregunta();
                     sp_AdapterPreguntasFrecuentes adapterpregfre=new sp_AdapterPreguntasFrecuentes(listapregfrec);
                     rclvprefrec.setAdapter(adapterpregfre);
                 }catch (JSONException e){
