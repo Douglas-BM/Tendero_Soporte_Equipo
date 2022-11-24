@@ -60,6 +60,7 @@ public class sp_AdapterPreguntasFrecuentes extends RecyclerView.Adapter<sp_Adapt
 
     @Override
     public int getItemCount() {
+
         return  listapregfrec.size();
     }
 

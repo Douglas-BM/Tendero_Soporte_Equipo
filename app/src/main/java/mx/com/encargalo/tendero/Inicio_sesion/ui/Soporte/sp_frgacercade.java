@@ -27,7 +27,7 @@ import mx.com.encargalo.R;
 
 
 public class sp_frgacercade extends Fragment{
-    Button btnWebsite, btnFacebook, btnInstagram;
+    Button btnWebsite, btnFacebook, btnInstagram, btnDesarrolladores;
     String url1, url2, url3;
 
     @Override
@@ -39,6 +39,7 @@ public class sp_frgacercade extends Fragment{
         btnWebsite=view.findViewById(R.id.btn_so_05_website);
         btnFacebook=view.findViewById(R.id.btn_so_05_facebook);
         btnInstagram=view.findViewById(R.id.btn_so_05_instagram);
+        btnDesarrolladores=view.findViewById(R.id.btn_so_05_desarrolladores);
         url1="https://es-la.facebook.com/";
 
         btnWebsite.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +67,13 @@ public class sp_frgacercade extends Fragment{
                 Uri uri = Uri.parse(url1);
                 Intent intent = new Intent(Intent.ACTION_VIEW,uri);
                 startActivity(intent);
+            }
+        });
+
+        btnDesarrolladores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_desarrolladores);
             }
         });
         return view;
